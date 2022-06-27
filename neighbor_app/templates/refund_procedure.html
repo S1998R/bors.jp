@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}返金手続き | bors{% endblock %}
+
+{% block head %}
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/B9xOjS8BiaJJeR1.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="page_title"><div>返金手続き</div></div>
+
+    <div>
+        <div>商品名：{{ talk.merchandise.merchandise_name }}</div>
+        <div>販売手数料：{{ talk.merchandise.sell_commission }}</div>
+    </div>
+
+    <div>
+        <div>ステータス：{{ talk.refund_result }}</div>
+    </div>
+
+    {% if not talk.refund_request_status %}
+
+        <div>返金リクエストが行われていません。</div>
+
+    {% else %}
+
+        {% if not talk.refund_result %}
+
+            <div>
+                <form action="{% url 'neighbor_app:refund_request_post' %}" method="POST" onSubmit="return nidoosi(this)">
+                    {% csrf_token %}
+                    <input type="hidden" name="refund" value="True">
+                    <button type="submit" class="register_button">返金</button>
+                </form>
+            </div>
+
+            <div>
+                <form action="{% url 'neighbor_app:refund_request_post' %}" method="POST" onSubmit="return nidoosi(this)">
+                    {% csrf_token %}
+                    <input type="hidden" name="refund" value="False">
+                    <button type="submit" class="register_button">返金不可</button>
+                </form>
+            </div>
+
+        {% else %}
+
+            <div class="refund_finish_message">返金審査は既に終了しています。</div>
+
+        {% endif %}
+
+
+
+    {% endif %}
+
+</div>
+
+
+{% endblock %}

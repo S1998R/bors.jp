@@ -1,0 +1,557 @@
+.sell_form {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.form_title {
+    text-align: left;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.title {
+    font-size: 20px;
+    text-align:center;
+    border-bottom: solid 1.5px #0000CC;
+    font-weight: bold;
+    color: #707070;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.common_design_form input, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: solid 0.5px;
+    background: white;
+    background-color: #FFF !important;
+    margin-bottom: 40px;
+    min-width: 200px;
+}
+
+.other_form input, .other_form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: solid 0.5px #000;
+    background: white;
+    background-color: #FFF !important;
+    margin-bottom: 40px;
+    min-width: 200px;
+    color: #000;
+}
+
+/*フォーカスでオレンジ*/
+input:focus, select:focus, textarea:focus {
+	border: 0.5px solid #F29F05;
+	outline: none;
+	box-shadow: 0 0 2px 1px #F29F05;
+}
+
+/*画像アップロードでは focus の効果打ち消し*/
+.account_image_div input:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#canvas_div {
+    width: 17vw;
+    height: 17vw;
+    display: none;
+    position: relative;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+#canvas_div_2 {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: relative;
+    width: 17vw;
+    height: 17vw;
+    max-width: 200px;
+    max-height: 200px;
+}
+#canvas_div_3 {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: relative;
+    width: 17vw;
+    height: 17vw;
+    max-width: 200px;
+    max-height: 200px;
+}
+#canvas_div_4 {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: relative;
+    width: 17vw;
+    height: 17vw;
+    max-width: 200px;
+    max-height: 200px;
+}
+#canvas_div_5 {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: relative;
+    width: 17vw;
+    height: 17vw;
+    max-width: 200px;
+    max-height: 200px;
+}
+#canvas_div_6 {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: relative;
+    width: 17vw;
+    height: 17vw;
+    max-width: 200px;
+    max-height: 200px;
+}
+#canvas_div_7 {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: relative;
+    width: 17vw;
+    height: 17vw;
+    max-width: 200px;
+    max-height: 200px;
+}
+#canvas_div_8 {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: relative;
+    width: 17vw;
+    height: 17vw;
+    max-width: 200px;
+    max-height: 200px;
+}
+#canvas_div_9 {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: relative;
+    width: 17vw;
+    height: 17vw;
+    max-width: 200px;
+    max-height: 200px;
+}
+#canvas_div_10 {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: relative;
+    width: 17vw;
+    height: 17vw;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+
+canvas {
+    /*object-fit: cover;*/
+    /* width: 17vw; */
+    /* height: 17vw; */
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+
+.canvas_block {
+    display: flex !important;
+}
+
+.canvas_none {
+    display:none !important;
+}
+
+.user_image_block {
+    display:block;
+}
+
+.user_image_none {
+    display:none;
+}
+
+.account_image_div {
+    display:inline;
+}
+
+input#clearbtn {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height:34;
+    background:#808080;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    outline:none;
+    border-radius: 0 !important;
+}
+input#clearbtn_2 {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 34;
+    background: #808080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 !important;
+}
+input#clearbtn_3 {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 34;
+    background: #808080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 !important;
+}
+input#clearbtn_4 {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 34;
+    background: #808080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 !important;
+}
+input#clearbtn_5 {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 34;
+    background: #808080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 !important;
+}
+input#clearbtn_6 {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 34;
+    background: #808080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 !important;
+}
+input#clearbtn_7 {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 34;
+    background: #808080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 !important;
+}
+input#clearbtn_8 {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 34;
+    background: #808080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 !important;
+}
+input#clearbtn_9 {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 34;
+    background: #808080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 !important;
+}
+input#clearbtn_10 {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 34;
+    background: #808080;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0 !important;
+}
+
+#camera_icon_2, #camera_icon_3, #camera_icon_4, #camera_icon_5, #camera_icon_6, #camera_icon_7, #camera_icon_8, #camera_icon_9, #camera_icon_10 {
+    display: none;
+}
+
+#image_cancel_icon_2, #image_cancel_icon_3, #image_cancel_icon_4, #image_cancel_icon_5, #image_cancel_icon_6, #image_cancel_icon_7, #image_cancel_icon_8, #image_cancel_icon_9, #image_cancel_icon_10 {
+    display: none;
+}
+
+.display {
+    display: block !important;
+}
+
+input.js-upload-file {
+    height: 1px;
+    width: 1px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+input.js-upload-file:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+input#id_image_user_image_none2 {
+    height: 1px;
+    width: 1px;
+}
+
+
+label.image {
+    margin: 0 auto;
+    background: #EEEEEE;
+    color: #fff;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.form_area {
+    border-bottom: solid #CCCCCC 0.5px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+/*ボタン*/
+.register_button {
+    display: inline-block;
+    text-decoration: none;
+    padding:5px 15px;
+    background:#fff;
+    outline:none;
+    font-size:15px;
+    border-radius:15px;
+    font-weight:bold;
+    /*width: 30%;*/
+    border:solid #000000 1px;
+    /*margin: 20px 0 0 70%;*/
+    color: #000000;
+    text-align: center;
+}
+
+.register_button:hover {
+    background:#f4a460;
+    color:#fff;
+    border:solid #fff 1px;
+    cursor:pointer;
+}
+
+.register_button:active {
+    background:#d2691e;
+}
+
+
+.none {
+    display: none;
+}
+
+
+.image_cancel_icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+}
+
+.fa-times-circle {
+    color: red;
+}
+
+.image_forms {
+    height: 17vw;
+    display: flex;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 200px;
+    max-width: 1200px;
+}
+
+.camera_icon {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: max-content;
+    text-align: center;
+}
+
+.fa-camera {
+    color: #888888;
+    font-size: 30px;
+}
+
+.register_button_div {
+    width: max-content;
+    margin: auto;
+}
+
+.form_area img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.required_message {
+    font-weight: bold;
+    color: #FFF;
+    background-color: #FF0033;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 10px;
+    display: inline-block;
+    width: max-content;
+    margin-bottom: 3px;
+}
+
+.required_message_image_field {
+    font-weight: bold;
+    color: #FFF;
+    background-color: #FF0033;
+    padding: 1px;
+    border-radius: 3px;
+    font-size: 10px;
+    position: absolute;
+}
+
+
+.image_form {
+    width: 17vw;
+    height: 17vw;
+    display: inline-block;
+    position: relative;
+    border-bottom: none;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+
+#image_none_error {
+    font-size: 14px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+    font-weight: bold;
+    background: #FFFFDD;
+    width: 80%;
+    color: #464999;
+}
+
+/*pc*/
+@media screen and (min-width:768px){
+
+.form_area_not_image {
+    width: 65%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+}
+
+#sell_form_error {
+    text-align: center;
+    background: #FFFFDD;
+    color: #464999;
+    font-weight: bold;
+    max-width: 500px;
+    margin: auto;
+}
+
+.plus_input {
+    margin-bottom: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: solid 0.5px #000;
+    background: white;
+    background-color: #FFF !important;
+    margin-bottom: 40px;
+    color: #000;
+    width: 100%;
+}
+
+.plus_input:focus {
+    border: 0.5px solid #F29F05;
+	outline: none;
+	box-shadow: 0 0 2px 1px #F29F05;
+}
+
+
+
+/* 出品アイコン */
+.to_sell_form_area_a {
+    display: none;
+}
+
+.sell_annotation {
+    font-size: 13px;
+    font-weight: bold;
+    color: #707070;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+

@@ -1,0 +1,22 @@
+{% extends 'accounts_base.html' %}
+{% load static %}
+{% block title %}メール認証{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/zjz9PQiD5ULXjOr.css' %}">{% endblock %}
+
+{% block content %}
+<div class="email_confirm">
+    <div class="title">ユーザー登録</div>
+    {% if confirmation %}
+        <div class="email_confirm_message">ユーザー登録を確定するには、以下のボタンを押してください。</div>
+        <form method="POST" action="{% url 'account_confirm_email' confirmation.key %}" name="form1" class="sign_up_confirm_form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {{ form.errors }}
+            <a class="sign_up_confirm_button" href="javascript:form1.submit()">確定</a>
+        </form>
+    {% else %}
+        {% url 'account_email' as email_url %}
+        <div>リンクの有効期限が過ぎています。<a class="register_button" href="{{ email_url }}">再申請</a></div>
+    {% endif %}
+</div>
+{% endblock %}

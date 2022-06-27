@@ -1,0 +1,302 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}出品情報編集 | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="出品情報編集">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/VNGIjZtyRkiZQ0q.css' %}">
+<link rel="stylesheet" href="{% static 'css/JeuH4MvjyWMPnXV.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="sell_form">
+    <form enctype="multipart/form-data" class="all_form" action="{% url 'neighbor_app:merchandise_edit_post' %}" method="POST" onSubmit="return nidoosi(this)" id="edit_form">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+    <div class="image_forms">
+        <div class="form_area image_form top_image_form">
+
+                <label class="image top_image" id="image_div">
+                    <div class="required_message_image_field none" id="required_message">必須</div>
+                    <span id="span_image_cancel_icon"></span>
+                    <div class="image_cancel_icon" id="image_cancel_icon"><i class="far fa-times-circle" id='clearbtn' onClick='clearFile(event)'></i></div>
+                    <div class="camera_icon" id="camera_icon"><i class="fas fa-camera"></i></div>
+                    <input type="file" name="image" accept="image/*" id="id_image" class="js-upload-file" onchange="previewImage(this);">
+                    <input type="hidden" value="" name="image_clear" id="image_clear">
+                    <span id="image_span"></span>
+                    {% if merchandise.image %}
+                        <img src="{{ merchandise.image.url }}" class="user-image" id="user-image">
+                    {% endif %}
+                    <div id="canvas_div"><canvas id="preview"></canvas></div>
+                </label>
+            {% if form.image.errors %}
+                    {{ form.image.errors }}
+            {% endif %}
+        </div>
+
+
+        <div class="form_area image_form" id="area_2">
+                <label class="image" id="image_div_2">
+                    <span id="span_image_cancel_icon_2"></span>
+                    <div class="image_cancel_icon" id="image_cancel_icon_2"><i class="far fa-times-circle" id='clearbtn_2' onClick='clearFile_2(event)'></i></div>
+                    <div class="camera_icon" id="camera_icon_2"><i class="fas fa-camera"></i></div>
+                    <span id="input_2"></span>
+                    <input type="hidden" value="" name="image_clear_2" id="image_clear_2">
+                    <span id="image_span_2"></span>
+                    {% if merchandise.image_2 %}
+                        <img src="{{ merchandise.image_2.url }}" class="user-image" id="user-image_2">
+                    {% endif %}
+                    <div id="canvas_div_2"><canvas id="preview_2"></canvas></div>
+                </label>
+            {% if form.image.errors %}
+                    {{ form.image.errors }}
+            {% endif %}
+        </div>
+
+        <div class="form_area image_form" id="area_3">
+                <label class="image" id="image_div_3">
+                    <span id="span_image_cancel_icon_3"></span>
+                    <div class="image_cancel_icon" id="image_cancel_icon_3"><i class="far fa-times-circle" id='clearbtn_3' onClick='clearFile_3(event)'></i></div>
+                    <div class="camera_icon" id="camera_icon_3"><i class="fas fa-camera"></i></div>
+                    <span id="input_3"></span>
+                    <input type="hidden" value="" name="image_clear_3" id="image_clear_3">
+                    <span id="image_span_3"></span>
+                    {% if merchandise.image_3 %}
+                        <img src="{{ merchandise.image_3.url }}" class="user-image" id="user-image_3">
+                    {% endif %}
+                    <div id="canvas_div_3"><canvas id="preview_3"></canvas></div>
+                </label>
+            {% if form.image.errors %}
+                    {{ form.image.errors }}
+            {% endif %}
+        </div>
+
+
+        <div class="form_area image_form" id="area_4">
+                <label class="image" id="image_div_4">
+                    <span id="span_image_cancel_icon_4"></span>
+                    <div class="image_cancel_icon" id="image_cancel_icon_4"><i class="far fa-times-circle" id='clearbtn_4' onClick='clearFile_4(event)'></i></div>
+                    <div class="camera_icon" id="camera_icon_4"><i class="fas fa-camera"></i></div>
+                    <span id="input_4"></span>
+                    <input type="hidden" value="" name="image_clear_4" id="image_clear_4">
+                    <span id="image_span_4"></span>
+                    {% if merchandise.image_4 %}
+                        <img src="{{ merchandise.image_4.url }}" class="user-image" id="user-image_4">
+                    {% endif %}
+                    <div id="canvas_div_4"><canvas id="preview_4"></canvas></div>
+                </label>
+            {% if form.image.errors %}
+                    {{ form.image.errors }}
+            {% endif %}
+        </div>
+
+
+        <div class="form_area image_form" id="area_5">
+                <label class="image" id="image_div_5">
+                    <span id="span_image_cancel_icon_5"></span>
+                    <div class="image_cancel_icon" id="image_cancel_icon_5"><i class="far fa-times-circle" id='clearbtn_5' onClick='clearFile_5(event)'></i></div>
+                    <div class="camera_icon" id="camera_icon_5"><i class="fas fa-camera"></i></div>
+                    <span id="input_5"></span>
+                    <input type="hidden" value="" name="image_clear_5" id="image_clear_5">
+                    <span id="image_span_5"></span>
+                    {% if merchandise.image_5 %}
+                        <img src="{{ merchandise.image_5.url }}" class="user-image" id="user-image_5">
+                    {% endif %}
+                    <div id="canvas_div_5"><canvas id="preview_5"></canvas></div>
+                </label>
+            {% if form.image.errors %}
+                    {{ form.image.errors }}
+            {% endif %}
+        </div>
+    </div>
+
+
+    <div class="image_forms">
+        <div class="form_area image_form" id="area_6">
+                <label class="image" id="image_div_6">
+                    <span id="span_image_cancel_icon_6"></span>
+                    <div class="image_cancel_icon" id="image_cancel_icon_6"><i class="far fa-times-circle" id='clearbtn_6' onClick='clearFile_6(event)'></i></div>
+                    <div class="camera_icon" id="camera_icon_6"><i class="fas fa-camera"></i></div>
+                    <span id="input_6"></span>
+                    <input type="hidden" value="" name="image_clear_6" id="image_clear_6">
+                    <span id="image_span_6"></span>
+                    {% if merchandise.image_6 %}
+                        <img src="{{ merchandise.image_6.url }}" class="user-image" id="user-image_6">
+                    {% endif %}
+                    <div id="canvas_div_6"><canvas id="preview_6"></canvas></div>
+                </label>
+            {% if form.image.errors %}
+                    {{ form.image.errors }}
+            {% endif %}
+        </div>
+
+
+        <div class="form_area image_form" id="area_7">
+                <label class="image" id="image_div_7">
+                    <span id="span_image_cancel_icon_7"></span>
+                    <div class="image_cancel_icon" id="image_cancel_icon_7"><i class="far fa-times-circle" id='clearbtn_7' onClick='clearFile_7(event)'></i></div>
+                    <div class="camera_icon" id="camera_icon_7"><i class="fas fa-camera"></i></div>
+                    <span id="input_7"></span>
+                    <input type="hidden" value="" name="image_clear_7" id="image_clear_7">
+                    <span id="image_span_7"></span>
+                    {% if merchandise.image_7 %}
+                        <img src="{{ merchandise.image_7.url }}" class="user-image" id="user-image_7">
+                    {% endif %}
+                    <div id="canvas_div_7"><canvas id="preview_7"></canvas></div>
+                </label>
+            {% if form.image.errors %}
+                    {{ form.image.errors }}
+            {% endif %}
+        </div>
+
+
+        <div class="form_area image_form" id="area_8">
+                <label class="image" id="image_div_8">
+                    <span id="span_image_cancel_icon_8"></span>
+                    <div class="image_cancel_icon" id="image_cancel_icon_8"><i class="far fa-times-circle" id='clearbtn_8' onClick='clearFile_8(event)'></i></div>
+                    <div class="camera_icon" id="camera_icon_8"><i class="fas fa-camera"></i></div>
+                    <span id="input_8"></span>
+                    <input type="hidden" value="" name="image_clear_8" id="image_clear_8">
+                    <span id="image_span_8"></span>
+                    {% if merchandise.image_8 %}
+                        <img src="{{ merchandise.image_8.url }}" class="user-image" id="user-image_8">
+                    {% endif %}
+                    <div id="canvas_div_8"><canvas id="preview_8"></canvas></div>
+                </label>
+            {% if form.image.errors %}
+                    {{ form.image.errors }}
+            {% endif %}
+        </div>
+
+
+        <div class="form_area image_form" id="area_9">
+                <label class="image" id="image_div_9">
+                    <span id="span_image_cancel_icon_9"></span>
+                    <div class="image_cancel_icon" id="image_cancel_icon_9"><i class="far fa-times-circle" id='clearbtn_9' onClick='clearFile_9(event)'></i></div>
+                    <div class="camera_icon" id="camera_icon_9"><i class="fas fa-camera"></i></div>
+                    <span id="input_9"></span>
+                    <input type="hidden" value="" name="image_clear_9" id="image_clear_9">
+                    <span id="image_span_9"></span>
+                    {% if merchandise.image_9 %}
+                        <img src="{{ merchandise.image_9.url }}" class="user-image" id="user-image_9">
+                    {% endif %}
+                    <div id="canvas_div_9"><canvas id="preview_9"></canvas></div>
+                </label>
+            {% if form.image.errors %}
+                    {{ form.image.errors }}
+            {% endif %}
+        </div>
+
+
+        <div class="form_area image_form" id="area_10">
+                <label class="image" id="image_div_10">
+                    <span id="span_image_cancel_icon_10"></span>
+                    <div class="image_cancel_icon" id="image_cancel_icon_10"><i class="far fa-times-circle" id='clearbtn_10' onClick='clearFile_10(event)'></i></div>
+                    <div class="camera_icon" id="camera_icon_10"><i class="fas fa-camera"></i></div>
+                    <span id="input_10"></span>
+                    <input type="hidden" value="" name="image_clear_10" id="image_clear_10">
+                    <span id="image_span_10"></span>
+                    {% if merchandise.image_10 %}
+                        <img src="{{ merchandise.image_10.url }}" class="user-image" id="user-image_10">
+                    {% endif %}
+                    <div id="canvas_div_10"><canvas id="preview_10"></canvas></div>
+                </label>
+            {% if form.image.errors %}
+                    {{ form.image.errors }}
+            {% endif %}
+        </div>
+    </div>
+
+
+        <div class="form_area">
+            <div class="form_title">商品名：<div class="required_message">必須</div></div>
+            <div class="common_design_form">
+                {{ form.merchandise_name }}
+            </div>
+        </div>
+        <div class="form_area">
+            <div class="form_title">価格：<div class="required_message">必須</div></div>
+            <div class="other_form">
+                {{ form.value }} 円
+            </div>
+        </div>
+        <div class="form_area">
+            <div class="form_title">商品の状態：<div class="required_message">必須</div></div>
+            <div class="other_form">
+                {{ form.merchandise_status }}
+            </div>
+        </div>
+        <div class="form_area">
+            <div class="form_title">カテゴリ：<div class="required_message">必須</div></div>
+            <div class="other_form">
+                {{ form.category }}
+            </div>
+        </div>
+
+        <div class="form_area">
+            <div class="form_title">学部：</div>
+            <div class="other_form">
+                {{ form.faculty }}
+            </div>
+            <input type="text" placeholder="追加する学部名" class="plus_input none" id="plus_faculty_input" name="plus_faculty">
+        </div>
+
+
+        <div class="form_area">
+            <div class="form_title">学科：</div>
+            <div class="other_form">
+                {{ form.department }}
+            </div>
+            <input type="text" placeholder="追加する学科名" class="plus_input none" id="plus_department_input" name="plus_department">
+        </div>
+
+        <div class="form_area">
+            <div class="form_title">商品の受け渡しが可能なエリア：<div class="required_message">必須</div></div>
+            <div class="common_design_form">
+                {{ form.region }}
+            </div>
+        </div>
+
+        <div class="form_area">
+            <div class="form_title">商品説明：<div class="required_message">必須</div></div>
+            <div class="common_design_form">
+                {{ form.explanation }}
+            </div>
+        </div>
+
+        <input type="hidden" name="merchandise_pk" value="{{ merchandise.pk }}">
+
+    </form>
+
+    <div id="default_image" title="{{ merchandise.image }}"></div>
+    <div id="default_image_2" title="{{ merchandise.image_2 }}"></div>
+    <div id="default_image_3" title="{{ merchandise.image_3 }}"></div>
+    <div id="default_image_4" title="{{ merchandise.image_4 }}"></div>
+    <div id="default_image_5" title="{{ merchandise.image_5 }}"></div>
+    <div id="default_image_6" title="{{ merchandise.image_6 }}"></div>
+    <div id="default_image_7" title="{{ merchandise.image_7 }}"></div>
+    <div id="default_image_8" title="{{ merchandise.image_8 }}"></div>
+    <div id="default_image_9" title="{{ merchandise.image_9 }}"></div>
+    <div id="default_image_10" title="{{ merchandise.image_10 }}"></div>
+    <div id="merchandise_pk" title="{{ merchandise.pk }}"></div>
+
+    <div id="edit_error"></div>
+
+    <div class="register_button_div">
+        <button type="submit" class="register_button" id="edit_submit_button">更新</button>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/2IvkmQIIMhJMoy7.js' %}"></script>
+
+
+{% endblock %}

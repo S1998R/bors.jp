@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ announce.title }} | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="{{ announce.title }}">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/uOMvJOY7eQMSZ6f.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="announce_title">
+            {{ announce.title }}
+        </div>
+
+        <div class="announce_content">
+            <p>{{ announce.content }}</p>
+        </div>
+
+    </div>
+
+{% endblock %}

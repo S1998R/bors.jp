@@ -1,0 +1,438 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ merchandise.merchandise_name }} | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="{{ merchandise.explanation }}">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/RBlIQw8Cm45Jjp7.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="scroll_position" title="{{ scroll_position }}"></div>
+
+
+<div class="popup" id="js-popup">
+  <div class="popup-inner">
+    <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
+    <div class="pop_title"><i class="fas fa-exclamation-triangle"></i> <span class="pop_title_important">禁止事項</span> <i class="fas fa-exclamation-triangle"></i></div>
+      <div class="pop_content">
+          <span class="pop_sub_title">商品の取引を完結させようとする質問は禁止です。</span>
+          <br>例）
+          <li>商品の受け渡し<span class="important_words">場所・日時</span>の詳細をやり取りし、取引を進めようとする</li>
+          <div class="calendar_icon">
+              <img src="{% static 'IfAakqHRaT6BVRy.png' %}" alt="カレンダー">
+              <img src="{% static 'WSPRDUcFdZ30gAs.png' %}" alt="場所">
+              <div class="batu_icons">
+                  <img src="{% static 'YYYQpC0rPMujHW1.png' %}" alt="禁止">
+                  <img src="{% static 'YYYQpC0rPMujHW1.png' %}" alt="禁止">
+              </div>
+          </div>
+          <li>相手を他ツールに誘導する</li>
+          <div class="sns_img">
+              <img src="https://img.icons8.com/color/48/000000/line-me.png"/>
+              <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/>
+              <img src="https://img.icons8.com/color/48/000000/twitter-squared.png"/>
+              <div class="batu_icons">
+                    <img src="{% static 'YYYQpC0rPMujHW1.png' %}" alt="禁止">
+                    <img src="{% static 'YYYQpC0rPMujHW1.png' %}" alt="禁止">
+                    <img src="{% static 'YYYQpC0rPMujHW1.png' %}" alt="禁止">
+              </div>
+          </div>
+          <div class="by_Icons8">
+              <a href="https://icons8.com/icon/21746/line">Line icon by Icons8</a>
+              <a href="https://icons8.com/icon/Xy10Jcu1L2Su/インスタグラム">インスタグラム icon by Icons8</a>
+              <a href="https://icons8.com/icon/60469/twitter-(四角)">Twitter (四角) icon by Icons8</a>
+          </div>
+      </div>
+  </div>
+  <div class="black-background" id="js-black-bg"></div>
+</div>
+
+
+
+{% if　not merchandise_user　%}
+    {% if not merchandise.display_status %}
+        {% if user.id %}
+            <div class="popup" id="js-popup_2">
+              <div class="popup-inner">
+                <div class="close-btn" id="js-close-btn_2"><i class="fas fa-times"></i></div>
+                <p class="pop_title_2">本当に購入しますか？</p>
+                  <div class="pop_content_2">
+                    <div class="check_mark_div"><i class="fas fa-check"></i></div><li class="after_button_push_list">ボタンを押すと、出品者とのトークルームが作成されます。受け取り場所、時間を決めて商品を購入しましょう。</li>
+                    <div class="check_mark_div"><i class="fas fa-check"></i></div><li class="after_button_push_list">本サービスは配送による取引を想定しておりません。希望する場合は自己責任でお願いします。</li>
+
+                    <form action="{% url 'neighbor_app:pay' %}" method="post" onSubmit="return nidoosi(this)">
+                        {% csrf_token %}
+                        <button type="submit" class="request_buy_button_popup" id="popup_buy_button">購入する</button>
+                    </form>
+
+                  </div>
+              </div>
+              <div class="black-background" id="js-black-bg_2"></div>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endif %}
+
+
+
+<div class="container">
+
+    <a href="{% url 'neighbor_app:account_profile'　merchandise.user.pk %}">
+    <div class="merchandise_user_title_user_image_and_username">
+        <div class="merchandise_user_title">
+            出品者
+        </div>
+        <div class="user_image_and_username">
+            {% if merchandise.user.image %}
+                <img src="{{ merchandise.user.image.url }}" class="user-icon">
+            {% else %}
+                <img class="user-icon" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+            {% endif %}
+            {{ merchandise.user.username }}
+        </div>
+    </div>
+    </a>
+
+    <div class="page_title">
+        {% if merchandise.display_status == 'stop' %}
+                出品停止中
+        {% elif merchandise.display_status == 'sold' %}
+                売り切れ
+        {% else %}
+                出品中
+        {% endif %}
+    </div>
+
+    <div class="flex_box">
+        <div class="images">
+            <div class="mainImg_div">
+                <div id="mainImg">
+
+                {% if merchandise.image %}
+                    <img src="{{ merchandise.image.url }}">
+                {% endif %}
+
+                </div>
+            </div>
+            {% if merchandise.image_2 or merchandise.image_3 or merchandise.image_4 or merchandise.image_5 %}
+            <ul id="subImg" class="subImg subImg_out_explanation">
+                {% if merchandise.image %}
+                    <li class="current"><img src="{{ merchandise.image.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_2 %}
+                    <li><img src="{{ merchandise.image_2.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_3 %}
+                    <li><img src="{{ merchandise.image_3.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_4 %}
+                    <li><img src="{{ merchandise.image_4.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_5 %}
+                    <li><img src="{{ merchandise.image_5.url }}"></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+
+            {% if merchandise.image_6 or merchandise.image_7 or merchandise.image_8 or merchandise.image_9 or merchandise.image_10 %}
+            <ul id="subImg_2" class="subImg_2 subImg_out_explanation">
+                {% if merchandise.image_6 %}
+                    <li><img src="{{ merchandise.image_6.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_7 %}
+                    <li><img src="{{ merchandise.image_7.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_8 %}
+                    <li><img src="{{ merchandise.image_8.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_9 %}
+                    <li><img src="{{ merchandise.image_9.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_10 %}
+                    <li><img src="{{ merchandise.image_10.url }}"></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+
+        </div>
+        <div class="merchandise_explanations">
+
+            <div class="merchandise_name_field">
+                {{ merchandise.merchandise_name }}
+            </div>
+
+            <div class="merchandise_university_field">
+            {% if merchandise.user.university %}
+                <a class="university" href="{% url 'neighbor_app:top' %}?university={{ merchandise.user.university }}">
+                    {{ merchandise.user.university }}
+                </a>
+            {% endif %}
+            {% if merchandise.faculty %}
+                <a href="{% url 'neighbor_app:top' %}?faculty={{ merchandise.faculty.faculty }}">
+                    > {{ merchandise.faculty.faculty }}
+                </a>
+            {% endif %}
+            {% if merchandise.department %}
+                <a href="{% url 'neighbor_app:top' %}?department={{ merchandise.department.department }}">
+                    > {{ merchandise.department.department }}
+                </a>
+            {% endif %}
+            </div>
+
+            <div class="merchandise_region_field">
+                受け渡し可能エリア：{{ merchandise.region }}
+            </div>
+
+            <div class="merchandise_status">
+                <div class="merchandise_status_title">
+                    商品の状態：
+                </div>
+                <div class="merchandise_status_field">
+                    {{ merchandise.merchandise_status }}
+                </div>
+            </div>
+
+            <div class="merchandise_value_field">
+                ¥{{ merchandise.value }}
+            </div>
+
+            <div class="comment_icon_div">
+                <i class="far fa-comment"></i>  質問
+                    <div class="open_comments_count">{{ merchandise_question_count }}</div>
+            </div>
+
+
+            {% if merchandise.image_2 or merchandise.image_3 or merchandise.image_4 or merchandise.image_5 %}
+            <ul id="subImg_subImg_in_explanation" class="subImg subImg_in_explanation">
+                {% if merchandise.image %}
+                    <li class="current"><img src="{{ merchandise.image.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_2 %}
+                    <li><img src="{{ merchandise.image_2.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_3 %}
+                    <li><img src="{{ merchandise.image_3.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_4 %}
+                    <li><img src="{{ merchandise.image_4.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_5 %}
+                    <li><img src="{{ merchandise.image_5.url }}"></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+
+            {% if merchandise.image_6 or merchandise.image_7 or merchandise.image_8 or merchandise.image_9 or merchandise.image_10 %}
+            <ul id="subImg_2_subImg_in_explanation" class="subImg_2 subImg_in_explanation">
+                {% if merchandise.image_6 %}
+                    <li><img src="{{ merchandise.image_6.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_7 %}
+                    <li><img src="{{ merchandise.image_7.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_8 %}
+                    <li><img src="{{ merchandise.image_8.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_9 %}
+                    <li><img src="{{ merchandise.image_9.url }}"></li>
+                {% endif %}
+                {% if merchandise.image_10 %}
+                    <li><img src="{{ merchandise.image_10.url }}"></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+
+
+
+        </div>
+    </div>
+        <div class="merchandise_explanation_title">
+            商品の説明
+        </div>
+        <div class="merchandise_explanation_field"><p>{{ merchandise.explanation }}</p></div>
+
+
+    <div id="comment_and_form">
+
+        <div class="open_comments">
+                <div>
+                    {% if merchandise_questions %}
+
+                        {% for item in merchandise_questions %}
+                            <div class="question_and_answer">
+                                <div class="question"><div class="q">Q.</div>{{ item.question }}</div>
+
+                                {% if item.answer %}
+                                    <div class="answer">
+                                        <div class="a">A.</div><span>{{ item.answer }}</span>
+                                        {% if　merchandise_user　%}
+                                            <div class="edit_icon_div" onclick="answer_edit(this)"><i class="fas fa-edit"></i></div>
+                                            <div class="answer_form_div none">
+                                                <form class="all_form" enctype="multipart/form-data" action="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}" method="POST" onSubmit="return nidoosi(this)">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="question_pk" value="{{ item.pk }}">
+                                                    <div class="answer_form_and_button">
+                                                        {{ form.answer }}
+                                                        <div class="annotation">
+                                                            ※質問者は回答に返信できません。
+                                                        </div>
+                                                        <div class="comment_button">
+                                                            <button type="submit" class="register_button">更新</button>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" name="body_scroll_px" value="0">
+                                                    <input type="hidden" name="submit_token" value="{{ submit_token }}">
+                                                </form>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+
+                                {% else %}
+                                    {% if merchandise_user %}
+                                        {% if not merchandise.display_status == "stop" %}
+                                            <div class="answer_form_div">
+                                                <form class="all_form" enctype="multipart/form-data" action="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}" method="POST" onSubmit="return nidoosi(this)">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="question_pk" value="{{ item.pk }}">
+                                                    <input type="hidden" name="body_scroll_px" value="0">
+                                                    <input type="hidden" name="submit_token" value="{{ submit_token }}">
+                                                    <div class="answer_form_and_button">
+                                                        {{ form.answer }}
+                                                        <div class="annotation">
+                                                            ※質問者は回答に返信できません。
+                                                        </div>
+                                                        <div class="comment_button">
+                                                            <button type="submit" class="register_button">回答する</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        {% else %}
+
+                                            <div class="answer">出品を中断しているため質問に回答できません。</div>
+
+                                        {% endif %}
+
+                                    {% else %}
+
+                                        <div class="answer">出品者による回答はまだありません。</div>
+
+                                    {% endif %}
+
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+
+                    {% endif %}
+
+                </div>
+
+        </div>
+
+
+        {% if not merchandise_user and not merchandise.display_status %}
+            <div class="talk_form">
+
+                    {% if user.id %}
+
+                        <form enctype="multipart/form-data" class="all_form" action="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}" method="POST" onSubmit="return nidoosi(this)">
+                                {% csrf_token %}
+                                {{ form.non_field_errors }}
+                            <input type="hidden" name="body_scroll_px" id="get_body_scroll_px" value="0">
+                            <input type="hidden" name="submit_token" value="{{ submit_token }}">
+                            <div class="form_area">
+                                <div class="text_area_div">
+
+                                        {{ form.question }}
+                                        <div class="comment_button">
+                                            <button type="submit" class="register_button">質問する</button>
+                                        </div>
+
+                                </div>
+                            </div>
+                        </form>
+
+                    {% else %}
+
+                        <div class="comment_button">
+                            <a class="register_button" href="{% url 'account_login' %}">ログインして質問する</a>
+                        </div>
+
+                    {% endif %}
+
+            </div>
+        {% endif %}
+
+
+        {% if　merchandise_user　%}
+
+            <div class="buttons">
+                {% if not merchandise.display_status == 'sold' %}
+                    <a href="{% url 'neighbor_app:merchandise_edit'　merchandise.pk %}">
+                        <div class="register_button">
+                                 商品の編集
+                        </div>
+                    </a>
+                {% endif %}
+                <div class="stop_form">
+                     {% if merchandise.display_status is None %}
+                        <form action="{% url 'neighbor_app:display_stop' %}" method="post" onSubmit="return stop_check()">
+                            {% csrf_token %}
+                            <input type="hidden" name="merchandise_pk" value="{{ merchandise.pk }}">
+                                <input type="hidden" name="stop_status" value="stop">
+                                <button type="submit" class="register_button">出品停止</button>
+                        </form>
+                    {% elif merchandise.display_status == 'stop' %}
+                        <form action="{% url 'neighbor_app:display_stop' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="merchandise_pk" value="{{ merchandise.pk }}">
+                                <input type="hidden" name="stop_status" value="stop_clear">
+                                <button type="submit" class="register_button">出品再開</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+
+        {% else %}
+
+            <div class="buttons">
+
+            {% if not merchandise.display_status %}
+
+                {% if user.id %}
+
+                    <div class="buy_form" id="buy_button_div">
+                        <button class="request_buy_button" id="buy_button">購入する</button>
+                    </div>
+
+                {% else %}
+
+                    <div class="buy_form">
+                        <a href="{% url 'account_login' %}"><button class="request_buy_button">ログインして購入する</button></a>
+                    </div>
+
+                {% endif %}
+
+            {% endif %}
+
+            </div>
+
+
+        {% endif %}
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/7VC7idKjHzwC4oZ.js' %}"></script>
+
+{% endblock %}

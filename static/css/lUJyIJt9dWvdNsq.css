@@ -1,0 +1,53 @@
+.form_fields {
+    width: 100%;
+}
+
+.field_title {
+    width: 100%;
+}
+
+.form_fields input, select {
+    width: 100%;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: solid 0.5px;
+    background: white;
+    background-color: #FFF !important;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+/*フォーカスでオレンジ*/
+input:focus, select:focus {
+	border: 0.5px solid #F29F05;
+	outline: none;
+	box-shadow: 0 0 2px 1px #F29F05;
+}
+
+.tenant_form {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.register_button_div {
+    width: max-content;
+    margin: auto;
+}
+
+.sub_explanation {
+    font-size: 9px;
+    font-weight: bold;
+    color: orange;
+}
+
+.forms {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.last_explanations {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

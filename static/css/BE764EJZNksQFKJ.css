@@ -1,0 +1,62 @@
+.image_and_talk {
+    width: auto;
+    display: flex;
+    vertical-align: center;
+    margin-bottom: 20px;
+}
+
+.merchandise_name {
+    background: #EEEEEE;
+    margin-bottom: 10px;
+    width: max-content;
+    max-width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.user_image_and_username {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 10px;
+    text-align: center;
+    max-width: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.talk_user_image {
+    width: auto;
+    display: inline-block;
+}
+
+.last_talk {
+    width: 100%;
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+    margin-top: 18px;
+    margin-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container a {
+    text-decoration: none;
+    color: #000;
+}
+
+.last_talk_a {
+    width: 80%;
+}
+
+.image_and_talk:hover {
+    background: #EEEEEE;
+}
+
+.no_comment {
+    font-weight: bold;
+    color: #FF3333;
+}

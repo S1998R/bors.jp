@@ -1,0 +1,291 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}トーク | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="トーク">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/wz3tGyNgVTXYHyT.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div id="scroll_position" title="{{ scroll_position }}"></div>
+
+    <div class="container">
+        {% if talk.talk_seller == user %}
+            <a class="to_profile" href="{% url 'neighbor_app:account_profile' talk.talk_buyer.pk  %}">
+        {% else %}
+            <a class="to_profile" href="{% url 'neighbor_app:account_profile' talk.talk_seller.pk  %}">
+        {% endif %}
+            <div class="merchandise_user_title_user_image_and_username">
+            <div class="merchandise_user_title">
+                取引相手
+            </div>
+            <div class="user_image_and_username">
+                {% if talk.talk_seller == user %}
+
+                        {% if talk.talk_buyer.image %}
+                            <img src="{{ talk.talk_buyer.image.url }}" class="user-icon">
+                        {% else %}
+                            <img class="user-icon" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                        {% endif %}
+                        {{ talk.talk_buyer.username }}
+
+                    {% else %}
+                        {% if talk.talk_seller.image %}
+                            <img src="{{ talk.talk_seller.image.url }}" class="user-icon">
+                        {% else %}
+                            <img class="user-icon" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                        {% endif %}
+                        {{ talk.talk_seller.username }}
+
+                    {% endif %}
+            </div>
+        </div>
+        </a>
+
+    <div class="open_merchandise_info" onclick="merchandise_info_open()"><i class="fas fa-plus"></i>商品情報を見る</div>
+    <div class="merchandise_info_wrap none" id="merchandise_info_wrap">
+        <div id="mainImg">
+            <img src="{{ merchandise.image.url }}">
+        </div>
+        {% if merchandise.image_2 or merchandise.image_3 or merchandise.image_4 or merchandise.image_5 %}
+        <ul id="subImg" class="subImg">
+                <li class="current"><img src="{{ merchandise.image.url }}"></li>
+            {% if merchandise.image_2 %}
+                <li><img src="{{ merchandise.image_2.url }}"></li>
+            {% endif %}
+            {% if merchandise.image_3 %}
+                <li><img src="{{ merchandise.image_3.url }}"></li>
+            {% endif %}
+            {% if merchandise.image_4 %}
+                <li><img src="{{ merchandise.image_4.url }}"></li>
+            {% endif %}
+            {% if merchandise.image_5 %}
+                <li><img src="{{ merchandise.image_5.url }}"></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+
+        {% if merchandise.image_6 or merchandise.image_7 or merchandise.image_8 or merchandise.image_9 or merchandise.image_10 %}
+        <ul id="subImg_2">
+            {% if merchandise.image_6 %}
+                <li><img src="{{ merchandise.image_6.url }}"></li>
+            {% endif %}
+            {% if merchandise.image_7 %}
+                <li><img src="{{ merchandise.image_7.url }}"></li>
+            {% endif %}
+            {% if merchandise.image_8 %}
+                <li><img src="{{ merchandise.image_8.url }}"></li>
+            {% endif %}
+            {% if merchandise.image_9 %}
+                <li><img src="{{ merchandise.image_9.url }}"></li>
+            {% endif %}
+            {% if merchandise.image_10 %}
+                <li><img src="{{ merchandise.image_10.url }}"></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+
+
+        <div class="merchandise_name_field">
+            {{ merchandise.merchandise_name }}
+        </div>
+
+        <div class="merchandise_university_field">
+            {% if merchandise.user.university %}
+                {{ merchandise.user.university }}
+            {% endif %}
+            {% if merchandise.faculty %}
+                 > {{ merchandise.faculty.faculty }}
+            {% endif %}
+            {% if merchandise.department %}
+                 > {{ merchandise.department.department }}
+            {% endif %}
+        </div>
+
+
+        <div class="merchandise_region_field">
+            受け渡し可能エリア：{{ merchandise.region }}
+        </div>
+
+        <div class="merchandise_status">
+            <div class="merchandise_status_title">
+                商品の状態：
+            </div>
+            <div class="merchandise_status_field">
+                {{ merchandise.merchandise_status }}
+            </div>
+        </div>
+
+        <div class="flex_wrap">
+            <div class="value_and_count">
+                <div class="merchandise_value_field">
+                    ¥{{ merchandise.value }}
+                </div>
+
+                <div class="comment_icon_div">
+                    <i class="far fa-comment"></i>  質問
+                        <div class="open_comments_count">{{ merchandise_question_count }}</div>
+                </div>
+            </div>
+
+            <div class="more_see" onclick="hidden_or_visible()">
+                <i class="fas fa-plus"></i><span>さらに見る</span>
+            </div>
+
+        </div>
+
+        <div class="more_hidden" id="more_wrap">
+            <div class="merchandise_explanation_title">
+                商品の説明
+            </div>
+
+            <div class="merchandise_explanation_field"><p>{{ merchandise.explanation }}</p></div>
+
+            <div>
+                {% if merchandise_questions %}
+
+                    {% for item in merchandise_questions %}
+                        <div class="question_and_answer">
+                            <div class="question"><div class="q">Q.</div>{{ item.question }}</div>
+
+                            {% if item.answer %}
+                                <div class="answer"><div class="a">A.</div>{{ item.answer }}</div>
+                            {% else %}
+                                <div class="answer">出品者による回答はまだありません。</div>
+                            {% endif %}
+
+                        </div>
+                    {% endfor %}
+
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+
+        <div class="all_comment_div">
+            <div class="talk_title">トーク</div>
+            <div class="close_message">
+                <p>このトークルームは {{ talk_close_day.year }}/{{ talk_close_day.month }}/{{ talk_close_day.day }} に閉鎖されます。</p>
+            </div>
+            <div class="no_comment">
+                <p>商品の取引場所や日時を決めて取引を進めましょう！！</p>
+            </div>
+
+            {% if comments %}
+                {% for comment in comments %}
+                        <div class="comment">
+                            {% if comment.user == user %}
+                                <div class="username_comment self_comment">
+                                    <div class="self_comment_p">
+
+                                        {% if comment.comment %}
+                                            <p>{{ comment.comment }}</p>
+                                        {% endif %}
+
+                                        {% if comment.comment_image %}
+                                            <div class="talk_image">
+                                                <img src="{{ comment.comment_image.url }}">
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="talk_user_image">
+                                    {% if comment.user.image %}
+                                        <img class="user-icon" src="{{ comment.user.image.url }}">
+                                    {% else %}
+                                        <img class="user-icon" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                                    {% endif %}
+                                </div>
+                                <div class="username_comment">
+                                    <div class="comment_username">
+                                        {{ comment.user.username }}
+                                    </div>
+                                    <div class="comment_p">
+
+                                        {% if comment.comment %}
+                                            <p>{{ comment.comment }}</p>
+                                        {% endif %}
+
+                                        {% if comment.comment_image %}
+                                            <div class="talk_image">
+                                                <img src="{{ comment.comment_image.url }}">
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        {% if not talk.refund_request_status %}
+            <div class="talk_form">
+                <form enctype="multipart/form-data" class="question_form" action="{% url 'neighbor_app:talk_room_post' %}" method="POST" onSubmit="return nidoosi_for_talk_room(this)" id="comment_form">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+
+                    <div class="form_area">
+                        <div>
+                            {{ form.comment }}
+                        </div>
+                    </div>
+
+                    <div class="talk_upload_image_div">
+                        <label class="talk_image_upload">
+                            <i class="far fa-images"></i> 画像を選択<span id="talk_image_span"></span><input type="file" name="talk_image" accept="image/*" id="talk_image" class="talk_js-upload-file none" onchange="talk_preview_Image(this)">
+                        </label>
+                    </div>
+
+                    <div class="image_delete_div">
+                        <input type='button' id='image_delete' value='取消' onClick='talk_image_clearFile(event)'>
+                    </div>
+
+                    <span id="image_span_2"></span>
+                    <div id="canvas_div_2" class="canvas_none"><canvas id="preview_2"></canvas></div>
+
+                    <input type="hidden" name="body_scroll_px" id="get_body_scroll_px" value="0">
+
+                    <div id="talk_none_error"></div>
+
+                    <input type="hidden" name="submit_token" value="{{ submit_token }}">
+
+                    <div>
+                    </div>
+                </form>
+                <button class="register_button" id="talk_submit_button">送信</button>
+            </div>
+
+
+            {% if seller %}
+
+
+            {% endif %}
+
+
+        {% else %}
+
+
+        {% endif %}
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/dQMRGL9FFYysGfK.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/0WPIKeV4JVYqmqJ.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/pW5S3OrX16GDpRW.js' %}"></script>
+
+{% endblock %}

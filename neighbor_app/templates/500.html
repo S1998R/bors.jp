@@ -1,0 +1,17 @@
+{% extends 'accounts_base.html' %}
+{% load static %}
+{% block title %}エラーが発生しました | bors{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/HBOFZLc175GHrPt.css' %}">{% endblock %}
+{% block content %}
+
+<div class="error_page_div">
+<div class="error_page_message">エラーが発生しました。</div>
+<div class="error_image">
+    <img src="{% static '5288AX2TGe2QBVX.svg' %}" alt="エラー">
+</div>
+<div><a href="{% url 'neighbor_app:top' %}">トップへ</a></div>
+<div><a href="{% url 'account_login' %}">ログイン</a></div>
+<div><a href="{% url 'account_signup' %}">新規登録</a></div>
+</div>
+
+{% endblock %}

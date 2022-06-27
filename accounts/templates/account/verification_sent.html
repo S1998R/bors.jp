@@ -1,0 +1,19 @@
+{% extends 'accounts_base.html' %}
+{% load static %}
+{% block title %}確認メールを送信しました{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/VaQvfVs6BgmCMXZ.css' %}">{% endblock %}
+
+{% block content %}
+
+<div class="sent_email">
+    <div class="important_message">※本登録は<br>まだ完了していません。</div>
+    <div class="margin_top">本登録用のメールを送信しました。</div>
+    <div>メールの本登録用リンクにアクセスし、本登録を完了させてください。リンクは24時間で失効します。</div>
+    <div>メールが届かない場合は、迷惑メールをご確認ください。それでも届かない場合はbors.staff@gmail.comまでご連絡下さい。</div>
+
+    <div class="sent_image">
+        <img src="{% static 'CotEhvUnlgEM5h7.svg' %}" alt="送信しました">
+    </div>
+
+</div>
+{% endblock %}

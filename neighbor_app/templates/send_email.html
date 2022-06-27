@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}メール受け取り設定 | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="メール受け取り設定">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/UzOlHdq6WbunZxa.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+
+        <div class="page_title">
+            <div>メール一斉送信</div>
+        </div>
+
+        <div class="confirm_form">
+            <form enctype="multipart/form-data" action="{% url 'neighbor_app:send_email' %}" method="POST" onSubmit="return send_check()">
+                {% csrf_token %}
+                <div class="field_title">
+                   タイトル ：
+                </div>
+                <div>
+                    {{ form.title }}
+                </div>
+                <div class="field_title">
+                   内容 ：
+                </div>
+                <div>
+                    {{ form.content }}
+                </div>
+
+                <div class="field">
+                    <button type="submit" class="register_button">送信</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+<script type="text/javascript" src="{% static 'js/klcGO16pjtuEmtr.js' %}"></script>
+
+{% endblock %}

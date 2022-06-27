@@ -1,0 +1,148 @@
+#canvas_div {
+    width:max-content;
+    margin-left:auto;
+    margin-right:auto;
+    display:none;
+}
+
+canvas {
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3.5px solid #eee;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 30px;
+}
+
+.canvas_block {
+    display:block !important;
+}
+
+.canvas_none {
+    display:none !important;
+}
+
+.user_image_block {
+    display:block;
+}
+
+.user_image_none {
+    display:none;
+}
+
+.account_image_div {
+    display:inline;
+}
+
+input#clearbtn {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height:34;
+    background:#808080;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    outline:none;
+    border-radius: 0 !important;
+}
+
+div.field > input, div.field > textarea, div.field > select {
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: solid 1px;
+    background: white;
+    min-width: 250px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.user-image {
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3.5px solid #eee;
+    width: 250px;
+    height: 250px;
+    margin: 15px auto;
+    margin-bottom: 30px;
+}
+
+input#id_image {
+    display: none;
+}
+
+label.image {
+    padding: 5px 10px;
+    margin: 0 auto;
+    background: #f4a460;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    width: 130px;
+}
+
+.field {
+    text-align: center;
+    width: 90%;
+    padding-top: 20px;
+    margin: auto;
+}
+
+.sub_title {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color: #707070;
+}
+
+.my_image_area {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin: 15px auto;
+    margin-bottom: 30px;
+    background: #EEEEEE;
+}
+
+div.field > textarea:focus {
+	border: 0.5px solid #F29F05;
+	outline: none;
+	box-shadow: 0 0 2px 1px #F29F05;
+}
+
+.important_message {
+    font-weight: bold;
+    color: orange;
+    font-size: 13px;
+}
+
+.image_field {
+    margin-bottom: 10px;
+}
+
+.none {
+    display: none;
+}
+
+#account_none_error {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #FFFFDD;
+    color: #707070;
+    font-weight: bold;
+}
+
+#account_none_error_message {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #FFFFDD;
+    color: #464999;
+    font-weight: bold;
+    min-width: 250px;
+    max-width: 400px;
+    text-align: center;
+}
+

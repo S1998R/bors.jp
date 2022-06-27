@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}bors ボース | 大学生向けのフリマプラットフォーム{% endblock %}
+
+{% block head %}
+    <meta name="description" content="大学内に特化したフリマプラットフォームです。大学で使う教科書や道具が効率よく見つかるかも！？・お手軽出品・大学に来たついでに売り買いできて配送も必要ナシ。">
+{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/27ByoCjEowyJYIC.css' %}">{% endblock %}
+
+
+{% block content %}
+
+<div id="loader-bg" class="is-hide">
+
+    <div class="loading_logo">
+        <img src="{% static '1QEycLfZBT4Ab8P.png' %}" alt="bors">
+    </div>
+
+    <div id="loader" class="is-hide">
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
+    </div>
+</div>
+
+    {% if search_word %}
+        <div class="search_word">
+            <div class="search_word_display">"{{ search_word }}"の検索結果</div><div class="search_reset_div"><a href="{% url 'neighbor_app:top' %}"><div class="search_reset">リセット</div></a></div>
+        </div>
+    {% endif %}
+    <div class="form_and_reset">
+        <form action="{% url 'neighbor_app:top' %}" method="POST" onSubmit="return nidoosi(this)" class="search_form">
+                {% csrf_token %}
+
+                <input name="search_word" type="text" placeholder="学部、学科、商品タイトル等で検索">
+
+        </form>
+    </div>
+
+    <div>
+        <div class="conditions">
+            <div onclick="all_category_selected()" id="condition_all_category">全品</div><div class="border"></div><div onclick="textbook_selected()" id="condition_textbook">教科書</div><div class="border"></div><div onclick="others_selected()" id="condition_others">その他</div>
+        </div>
+        <div class="conditions">
+            <div onclick="all_selected()" id="condition_all">全品</div><div class="border"></div><div onclick="sell_selected()" id="condition_sell">出品中のみ</div>
+        </div>
+    </div>
+
+
+    <div class="image_area" id="id_image_area">
+
+            {% for merchandise in merchandise %}
+                {% if merchandise.display_status is None %}
+
+                    {% if merchandise.category == "textbook" %}
+                        <div class="image_wrap sell_textbook">
+                            <a href="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}">
+                                <div class="image_div">
+
+                                    {% if merchandise.image %}
+                                        <img src="{{ merchandise.image.url }}" loading="lazy">
+                                    {% endif %}
+
+                                    <div class="university_div">
+                                        <a class="university" href="{% url 'neighbor_app:top' %}?university={{ merchandise.user.university }}">
+                                            {{ merchandise.user.university }}
+                                        </a>
+                                    </div>
+
+                                    <div class="faculty_department_div">
+                                        {% if merchandise.faculty.initial %}
+                                            <p class="faculty_initial">
+                                                <a href="{% url 'neighbor_app:top' %}?faculty={{ merchandise.faculty.faculty }}">
+                                                    {{ merchandise.faculty.initial }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                        {% if merchandise.department.initial %}
+                                            <p class="department_initial">
+                                                <a href="{% url 'neighbor_app:top' %}?department={{ merchandise.department.department }}">
+                                                    {{ merchandise.department.initial }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="merchandise_value_div">
+                                        <p class="merchandise_value">
+                                            ￥{{ merchandise.value }}
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+
+                    {% else %}
+                        <div class="image_wrap sell_other">
+                            <a href="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}">
+                                <div class="image_div">
+
+                                    {% if merchandise.image %}
+                                        <img src="{{ merchandise.image.url }}" loading="lazy">
+                                    {% endif %}
+
+                                    <div class="university_div">
+                                        <a class="university" href="{% url 'neighbor_app:top' %}?university={{ merchandise.user.university }}">
+                                            {{ merchandise.user.university }}
+                                        </a>
+                                    </div>
+
+                                    <div class="faculty_department_div">
+                                        {% if merchandise.faculty.initial %}
+                                            <p class="faculty_initial">
+                                                <a href="{% url 'neighbor_app:top' %}?faculty={{ merchandise.faculty.faculty }}">
+                                                    {{ merchandise.faculty.initial }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                        {% if merchandise.department.initial %}
+                                            <p class="department_initial">
+                                                <a href="{% url 'neighbor_app:top' %}?department={{ merchandise.department.department }}">
+                                                    {{ merchandise.department.initial }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="merchandise_value_div">
+                                        <p class="merchandise_value">
+                                            ￥{{ merchandise.value }}
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+
+                {% else %}
+
+                    {% if merchandise.category == "textbook" %}
+                    <div class="image_wrap sold_textbook">
+                        <a href="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}">
+                            <div class="image_div">
+
+                            {% if merchandise.image %}
+                                <img src="{{ merchandise.image.url }}" loading="lazy">
+                            {% endif %}
+
+                            <div class="sold_out_div">
+                                <p>sold out</p>
+                            </div>
+                            <div class="university_div">
+                                <a class="university" href="{% url 'neighbor_app:top' %}?university={{ merchandise.user.university }}">
+                                    {{ merchandise.user.university }}
+                                </a>
+                            </div>
+                            <div class="merchandise_value_div">
+                                <p class="merchandise_value">
+                                    ￥{{ merchandise.value }}
+                                </p>
+                            </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="image_wrap sold_other">
+                        <a href="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}">
+                            <div class="image_div">
+
+                            {% if merchandise.image %}
+                                <img src="{{ merchandise.image.url }}" loading="lazy">
+                            {% endif %}
+
+                            <div class="sold_out_div">
+                                <p>sold out</p>
+                            </div>
+                            <div class="university_div">
+                                <a class="university" href="{% url 'neighbor_app:top' %}?university={{ merchandise.user.university }}">
+                                    {{ merchandise.user.university }}
+                                </a>
+                            </div>
+                            <div class="merchandise_value_div">
+                                <p class="merchandise_value">
+                                    ￥{{ merchandise.value }}
+                                </p>
+                            </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endif %}
+                {% endif %}
+
+            {% empty %}
+                <p class="merchandise_empty">現在、商品はありません。</p>
+            {% endfor %}
+
+
+         <div class="empty_item"></div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/qFx8s8VniGDN7Gw.js' %}"></script>
+
+{% endblock %}
+
+
+

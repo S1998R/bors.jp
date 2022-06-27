@@ -1,0 +1,101 @@
+/*両サイドに5%のマージン*/
+main > div {
+    margin: 0 5%;
+}
+
+/*タイトル編集*/
+div.title {
+    font-size: 20px;
+    text-align:center;
+    font-weight: bold;
+    color: #707070;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+/*ボタン*/
+.register_button {
+    display: inline-block;
+    text-decoration: none;
+    padding:5px 15px;
+    background:#fff;
+    outline:none;
+    font-size:15px;
+    border-radius:15px;
+    font-weight:bold;
+    width: 30%;
+    border:solid #000000 1px;
+    margin: 20px 0 0 70%;
+    color: #000000;
+    text-align: center;
+}
+
+.register_button:hover {
+    background:#f4a460;
+    color:#fff;
+    border:solid #fff 1px;
+}
+
+.register_button:active {
+    background:#d2691e;
+}
+
+.email_confirm_message {
+    margin: 40px auto;
+}
+
+/* アカウントのアイコン　*/
+#user_account:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f406";
+  margin-right:10px;
+}
+
+.sign_up_confirm_form {
+    width: max-content;
+    margin: auto;
+    margin-right: 0;
+}
+
+.sign_up_confirm_button {
+    text-decoration: none;
+    padding:5px 15px;
+    background:#fff;
+    outline:none;
+    font-size:15px;
+    border-radius:15px;
+    font-weight:bold;
+    border:solid #000000 1px;
+    color: #000000;
+    text-align: center;
+}
+
+
+.sign_up_confirm_button:hover {
+    background:#f4a460;
+    color:#fff;
+    border:solid #fff 1px;
+}
+
+.sign_up_confirm_button:active {
+    background:#d2691e;
+}
+
+/*----------------end smart phone-------------------------------------------------------------------------------------*/
+
+/*-------------------タブレット------------------------------------------------------------------------------------------*/
+@media screen and (min-width:470px){
+    main > div {
+    margin: 0 auto;
+    max-width: 470px;
+    }
+}
+
+/*----------------start pc--------------------------------------------------------------------------------------------*/
+@media screen and (min-width:768px){
+    main > div.signup {
+        margin: 0 auto;
+        max-width: 470px;
+    }
+}

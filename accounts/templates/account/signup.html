@@ -1,0 +1,83 @@
+{% extends 'accounts_base.html' %}
+{% load static %}
+{% block title %}新規登録{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/7g1k1SUg5f1a0AW.css' %}">{% endblock %}
+{% block content %}
+<div class="signup">
+    <div class="signup_title">新規登録</div>
+    <div class="signup_form">
+    <form method="POST" action="{% url 'account_signup' %}">
+
+        {% csrf_token %}
+            <div class="field first">
+            ユーザー名 ：<span id="exist1"></span>
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+            <div class="field">
+            大学 ：
+                {{ form.university }}
+                {{ form.university.errors }}
+            </div>
+            <div class="field">
+            パスワード ：<span class="password_message">※8文字以上</span>
+                {{ form.password1 }}
+                {{ form.password1.errors }}
+            </div>
+            <div class="field">
+            パスワード(確認) ：
+                {{ form.password2 }}
+                {{ form.password2.errors }}
+            </div>
+            <div class="field">
+            メールアドレス ：
+                {{ form.email }}
+                <span class="important_info_1">※大学から支給されたアドレス</span>
+                {{ form.email.errors }}
+            </div>
+
+            <div class="field">
+                {{ form.non_field_errors }}
+            </div>
+
+        {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+        <div class="sub_title">利用規約</div>
+        {% include 'terms_of_service_signup.html' %}
+
+        <div class="sub_title">プライバシーポリシー</div>
+        {% include 'privacy_policy_signup.html' %}
+
+        <div class="agree_checkbox">
+            <input type="checkbox" id="agree_1" onclick="agree_confirm()">
+            <label for="agree_1">利用規約、プライバシーポリシーに同意する。</label>
+        </div>
+
+
+       <div class="agree_checkbox">
+        <div class="agree_2_message">※事業者（個人事業主を含む）はお使い頂けません。</div>
+            <input type="checkbox" id="agree_2" onclick="agree_confirm()">
+            <label for="agree_2">私は「事業者」ではありません。</label>
+        </div>
+
+        <div class="register_button_div" id="register_button_div">
+            <button class="register_button" type="submit">登録</button>
+        </div>
+    </form>
+    </div>
+
+        {% if user.is_authenticated %}
+            <p>ログイン済</p>
+
+            <a href="{% url 'account_logout' %}">ログアウト</a>
+        {% endif %}
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'js/QQt2VE1gPsOiFU3.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vcf8KmFMhkbZVAn.js' %}"></script>
+
+
+{% endblock %}

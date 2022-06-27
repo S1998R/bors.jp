@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}トークリスト | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="トークリスト">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/BE764EJZNksQFKJ.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <div class="page_title">
+        <div>トークリスト</div>
+    </div>
+
+    {% if not talks %}
+        トークはありません。
+    {% else %}
+        {% for talk in talks %}
+
+            {% if talk.created_at > one_month_ago_from_today %}
+
+                <div class="merchandise_name">
+                    {{ talk.merchandise.merchandise_name }}
+                </div>
+                <a href="{% url 'neighbor_app:talk_room' talk.pk %}">
+
+                        <div class="image_and_talk">
+                            <div class="talk_user_image">
+
+                                <div class="user_image_and_username">
+                                {% if talk.talk_seller == user %}
+
+                                    {% if talk.talk_buyer.image %}
+
+                                            <img class="user-icon" src="{{ talk.talk_buyer.image.url }}">
+                                            {{ talk.talk_buyer.username }}
+
+                                    {% else %}
+
+                                            <img class="user-icon" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                                            {{ talk.talk_buyer.username }}
+
+                                    {% endif %}
+
+                                {% else %}
+
+                                    {%if talk.talk_seller.image %}
+
+                                            <img class="user-icon" src="{{ talk.talk_seller.image.url }}">
+                                            {{ talk.talk_seller.username }}
+
+                                    {% else %}
+
+                                            <img class="user-icon" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                                            {{ talk.talk_seller.username }}
+
+                                    {% endif %}
+
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        {% if not talk.refund_request_status %}
+
+                            {% if talk.last_comment %}
+
+                                <div class="last_talk_a">
+
+                                <div class="last_talk">
+                                    {{ talk.last_comment }}
+                                </div>
+
+                                </div>
+
+                            {% else %}
+
+                                <div class="last_talk_a">
+
+                                <div class="last_talk no_comment">
+                                    NEW !!
+                                </div>
+
+                                </div>
+
+                            {% endif %}
+
+                        {% else %}
+
+                            <div class="last_talk_a">
+
+                                <div class="last_talk">
+                                    返金リクエストが送信されました。
+                                </div>
+
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+                </a>
+
+            {% else %}
+                    <div class="merchandise_name">
+                        {{ talk.merchandise.merchandise_name }}
+                    </div>
+                        <div class="image_and_talk">
+                        <div class="talk_user_image">
+
+                            <div class="user_image_and_username">
+                            {% if talk.talk_seller == user %}
+
+                                {% if talk.talk_buyer.image %}
+
+                                        <img class="user-icon" src="{{ talk.talk_buyer.image.url }}">
+                                        {{ talk.talk_buyer.username }}
+
+                                {% else %}
+
+                                        <img class="user-icon" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                                        {{ talk.talk_buyer.username }}
+
+                                {% endif %}
+
+                            {% else %}
+
+                                {%if talk.talk_seller.image %}
+
+                                        <img class="user-icon" src="{{ talk.talk_seller.image.url }}">
+                                        {{ talk.talk_seller.username }}
+
+                                {% else %}
+
+                                        <img class="user-icon" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                                        {{ talk.talk_seller.username }}
+
+                                {% endif %}
+
+                            {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="last_talk">
+                            トーク作成から30日が経過したため閉鎖されました。
+                        </div>
+
+                    </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+</div>
+{% endblock %}

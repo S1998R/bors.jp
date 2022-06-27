@@ -1,0 +1,196 @@
+{% load static %}
+<html lang="ja">
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-218791915-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-218791915-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/uxko60DYrSE5GKw.css' %}">
+
+    <link rel="icon" href="{% static '65i02AtwuqmzogH.png' %}" sizes="192x192" type="image/png">
+    <link rel="shortcut icon" href="{% static '65i02AtwuqmzogH.png' %}" type="image/png" sizes="32x32">
+    <link rel="shortcut icon" href="{% static '65i02AtwuqmzogH.png' %}" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="{% static '65i02AtwuqmzogH.png' %}" sizes="180x180" type="image/png">
+
+    {% block head %}{% endblock %}
+
+    {% block css %}{% endblock %}
+
+    {% block link %}{% endblock %}
+
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+</head>
+
+<header class="site_header" onclick="click_side_none()">
+
+    <div class="header_logo">
+        <a href="{% url 'neighbor_app:top' %}">
+            <img src="{% static '1QEycLfZBT4Ab8P.png' %}" alt="bors">
+        </a>
+    </div>
+
+ <div class="username_title_pc pc_only_display"><span class="hidden"></span><span class="not_hidden"></span></div>
+
+    <nav class="header_info">
+        <ul id="header_menu_content">
+
+            {% if user.is_authenticated %}
+                <li class="header_menu_item pc_only_display header_menu_item_sp without_login_singnup_button"><a class="margin_top_a" href="{% url 'neighbor_app:sell_form' %}">出品する</a></li>
+
+                <li class="header_menu_item header_menu_item_sp border_none user_image">
+                    <a class="account_image" href="{% url 'neighbor_app:account' %}">
+                    {% if not user.image %}
+                    <img class="user-icon" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                    {% else %}
+                    <img class="user-icon" src="{{ user.image.url }}">
+                    {% endif %}
+                    </a>
+                </li>
+            {% else %}
+                <li class="header_menu_item pc_only_display header_menu_item_sp with_login_singnup_button"><a class="margin_top_a" href="{% url 'neighbor_app:sell_form' %}">出品する</a></li>
+
+                <li class="header_menu_item header_menu_item_sp margin_top_a">
+                    <a href="{% url 'account_login' %}">ログイン</a>
+                </li>
+
+                <li class="header_menu_item header_menu_item_sp margin_top_a">
+                    <a href="{% url 'account_signup' %}">新規登録</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+</header>
+
+<body>
+
+<div id="wrap">
+
+  <div id="nav-container">
+
+        <div class="bg" id="bg"></div>
+        <div class="button" tabindex="0" onclick="click_burger()" id="side_bar_button">
+          <span class="icon-bar" id="nth-of-type1"></span>
+          <span class="icon-bar" id="nth-of-type2"></span>
+          <span class="icon-bar" id="nth-of-type3"></span>
+        </div>
+        <div id="nav-content" tabindex="0">
+          <ul>
+            <div id="mypage_menu">
+
+            <div class="menu_main_title">
+                <p><a href="{% url 'neighbor_app:top' %}"><i class="fas fa-boxes"></i>商品一覧</a></p>
+            </div>
+
+            <div class="menu_main_title">
+                <p><a href="{% url 'neighbor_app:sell_form' %}"><i class="fas fa-paper-plane"></i>出品する</a></p>
+            </div>
+
+            <div class="menu_main_title">
+                <p><a href="{% url 'neighbor_app:sell_list' %}"><i class="fas fa-list"></i>出品一覧</a></p>
+            </div>
+
+            <div class="menu_main_title">
+                <p><a href="{% url 'neighbor_app:talk_list' %}"><i class="far fa-comments"></i>トークリスト</a></p>
+            </div>
+
+            <div class="menu_main_title">
+                <p><a href="{% url 'neighbor_app:about_service' %}"><i class="fas fa-angle-double-right"></i>borsについて</a></p>
+            </div>
+
+            <div class="menu_main_title">
+                <p><a href="{% url 'neighbor_app:inquiry' %}"><i class="fas fa-question-circle"></i>お問い合わせ</a></p>
+            </div>
+
+            {% if user.is_authenticated %}
+
+                <div class="menu_main_title">
+                    <p id="logout_a"><a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>ログアウト</a></p>
+                </div>
+
+            {% endif %}
+
+            <div class="menu_main_title" id="info_title">
+                <p><a href="{% url 'neighbor_app:information' %}"><i class="fas fa-bullhorn"></i>お知らせ</a></p>
+            </div>
+
+        </div>
+
+          </ul>
+        </div>
+
+  </div>
+
+
+
+  <div id="right_content">
+  <main onclick="click_side_none()">
+
+      <div class="message" id="base_message_div">
+        {% if messages %}
+            {% for message in messages %}
+                <p><i class="fas fa-exclamation-circle"></i>{{ message | linebreaksbr }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+      {% block content %}
+      {% endblock %}
+
+
+
+    <a class="to_sell_form_area_a" href="{% url 'neighbor_app:sell_form' %}">
+        <div class="to_sell_form_area" id="to_sell_form_area">
+            <div class="to_sell_form_area_message">出品</div>
+            <div class="camera_icon"><i class="fas fa-camera"></i></div>
+        </div>
+    </a>
+
+
+  </main>
+  </div>
+
+
+<footer class="site_footer" onclick="click_side_none()">
+
+    <div>
+    <nav id="footer_info">
+        <ul id="footer_menu_content">
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:top' %}">商品一覧</a></li>
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:terms_of_service' %}">利用規約</a></li>
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:privacy_policy' %}">プライバシーポリシー</a></li>
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:sctl' %}">特定商取引法に基づく通知</a></li>
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:inquiry' %}">お問い合わせ</a></li>
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:about_service' %}">borsについて</a></li>
+        </ul>
+    </nav>
+    <div class="copy_right">copy right© bors Web All Rights Reserved.</div>
+    </div>
+
+
+</footer>
+
+ </div>
+
+
+<script type="text/javascript" src="{% static 'js/GyNkefCCBA796bH.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/WhHfd1YHwYgPYOU.js' %}"></script>
+
+</body>
+</html>
+
+

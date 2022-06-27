@@ -1,0 +1,54 @@
+.content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 0.5px #808080;
+    padding-left: 10px;
+}
+
+.created_at {
+    margin-top: 20px;
+    width: max-content;
+    padding: 3px;
+    background-color: #EEEEEE;
+    margin-bottom: 5px;
+}
+
+.merchandise_name {
+    display: inline-block;
+    font-weight: bold;
+    color: #808080;
+}
+
+.sell_commission {
+    display: inline-block;
+    font-weight: bold;
+    color: red;
+}
+
+.refund_request_status {
+    display: inline-block;
+    font-size: 13px;
+    background-color: #FFC0CB;
+    color: red;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.sell_commission_message {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: auto;
+    color: #707070;
+}
+
+.annotation {
+    font-weight: bold;
+    font-size: 13px;
+    text-align: left;
+    color: red;
+}
+
+.inline-block {
+    display: inline-block;
+}

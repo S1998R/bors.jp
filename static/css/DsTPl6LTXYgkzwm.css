@@ -1,0 +1,47 @@
+.report_form {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+textarea {
+    width: 100%;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: solid 0.5px;
+    background: white;
+    background-color: #FFF !important;
+    margin-bottom: 20px;
+    min-width: 200px;
+    margin-top: 10px;
+}
+
+textarea:focus {
+	border: 0.5px solid #F29F05;
+	outline: none;
+	box-shadow: 0 0 2px 1px #F29F05;
+}
+
+.register_button_div {
+    width: max-content;
+    margin: auto;
+}
+
+.no_bottom_border {
+    border-bottom: none !important;
+}
+
+.border_div {
+    width: 100%;
+    border-bottom: solid #CCCCCC 0.5px;
+}
+
+.profile_merchandises_title {
+    font-size: 20px;
+}
+
+.under_container {
+    margin-top: 20px;
+}

@@ -1,0 +1,30 @@
+{% extends 'accounts_base.html' %}
+
+{% load static %}
+
+{% block title %}お問い合わせ | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="お問い合わせ">
+{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/Q9wB6dUIy5zYtcq.css' %}">{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="title">お問い合わせ</div>
+    <div class="confirm_form">
+    <form action="{% url 'neighbor_app:inquiry' %}" method="POST" onSubmit="return nidoosi(this)">
+                    {% csrf_token %}
+        <div class="form">お名前<div>{{ form.name }}</div></div>
+        <div class="form">返信用メールアドレス
+            <div>{{ form.email }}</div>
+        </div>
+        <div class="form">お問い合わせ内容<div>{{ form.content }}</div></div>
+        <div class="to_us_form_button_div"><button>送信</button></div>
+    </form>
+    </div>
+</div>
+
+{% endblock %}
+

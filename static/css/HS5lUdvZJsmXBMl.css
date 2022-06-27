@@ -1,0 +1,769 @@
+a {
+    text-decoration: none;
+    color: #5c5c5c;
+}
+
+.all_content_wrap {
+    color: #5c5c5c;
+}
+
+.important {
+    font-weight:bold;
+}
+
+.enca_start_button_div {
+    margin:auto;
+    text-align:center;
+}
+
+.enca_start_button {
+    padding:5px 15px;
+    background:#fff;
+    outline:none;
+    font-size:25px;
+    border-radius:15px;
+    font-weight:bold;
+    border:solid #000000 1px;
+    color: #000;
+}
+
+.enca_start_button:hover {
+    background:#f4a460;
+    color:#fff;
+    border:solid #fff 1px;
+    cursor: pointer;
+}
+
+.enca_start_button:active {
+    background:#d2691e;
+}
+
+i {
+    color:#FF5192;
+}
+
+.content_title {
+    background: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message_wrap {
+    font-size: 15px;
+    margin: auto;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+.page_title {
+    font-size:30px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.page_title_message {
+    margin-top: 30px;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #fafafa;
+    width: fit-content;
+    box-shadow: 0 0 6px 6px #fafafa;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.post_explain_wrap {
+    width:80%;
+    max-width:800px;
+    margin:auto;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.post_explain_title {
+    text-align: center;
+    font-size: 30px;
+    width: max-content;
+    margin: auto;
+    color: #5c5c5c;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.step_title {
+    font-weight:bold;
+    margin-top:20px;
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.step_content {
+    border-bottom:solid #aaa 0.5px;
+    width:100%;
+    padding-bottom:30;
+}
+
+.step_sub_content {
+    width: 35%;
+    display:inline-block;
+    vertical-align: top;
+}
+
+.img_div img {
+    width:100%;
+}
+
+.step_explain {
+    width:60%;
+    padding-right:20px;
+    padding-left: 10px;
+    display:inline-block
+}
+
+.step_explain_2 {
+    width:100%;
+    padding-right:20px;
+    padding-left: 10px;
+    display:inline-block
+}
+
+.marker {
+    background: linear-gradient(transparent 60%, #ffff33 0%);
+}
+
+.function_explain_wrap {
+    background-color: #FFF;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 100px;
+}
+
+.function_explain_title {
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    width: max-content;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+.function {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: max-content;
+    color: #FF4F50;
+    border-bottom: solid;
+}
+
+.function_content {
+    display: inline-block;
+    width: 68%;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.fee_wrap {
+    width:100%;
+    background:#f3f3f3;
+    padding-top:10px;
+    padding-bottom:30px;
+    margin-bottom:30px;
+}
+
+.payment_wrap {
+    width:100%;
+    background:#f3f3f3;
+    padding-top:30px;
+    padding-bottom:30px;
+    margin-bottom:30px;
+}
+
+.fee_explain_wrap {
+    width:90%;
+    max-width:800px;
+    margin:auto;
+    margin-top:50px;
+    margin-bottom:50px;
+    color:#000;
+}
+
+.fee_and_payment_content_title {
+    padding:10px;
+}
+
+.fee_explain_title {
+    font-size:30px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.gest_host_fee {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight:bold;
+    font-size:18px;
+    text-align:center;
+}
+
+.gest_fee {
+    margin:auto;
+    display:inline-block;
+}
+
+.host_fee {
+    margin:auto;
+    display:inline-block;
+    margin-right:40;
+    margin-bottom:10;
+}
+
+.gest_color {
+    /*background: linear-gradient(transparent 60%, #C1F532 0%);*/
+}
+
+.host_color {
+    /*background: linear-gradient(transparent 60%, #82EFFB 0%);*/
+}
+
+.underline {
+    background: linear-gradient(transparent 80%, #deb887 0%);
+}
+
+.fee_explain_image {
+    margin-top:30px;
+    margin-bottom:30px;
+    border:solid #aaa 2px;
+}
+
+.fee_sub_explain {
+    text-align: center;
+    font-weight: bold;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.answer {
+}
+
+.answer_content {
+    display: inline-block;
+}
+
+.many_case {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+.flow_wrap {
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+    max-width: 1500px;
+}
+
+.first_step {
+    margin-bottom: 30px;
+}
+
+.step_title {
+    margin: auto;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 20px;
+    background-color: #FF4F50;
+    width: max-content;
+    border-radius: 5px;
+}
+
+.second_step {
+    max-width: 1300px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.step_wrap {
+    width: max-content;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    vertical-align: middle;
+}
+
+.step_image {
+    width: 20vw;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 200px;
+}
+
+.step_image img {
+    width: 20vw;
+    margin: auto;
+    max-width: 200px;
+}
+
+
+.step_explanation {
+    text-align: center;
+    font-weight: bold;
+    color: #808080;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    width: max-content;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.arrow img {
+    width: 50px;
+    margin: auto;
+}
+
+.arrow_and_step_wrap {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+.fee_explain_detail {
+    font-weight: bold;
+    color: #707070;
+    margin-bottom: 15px;
+}
+
+.sub_explain {
+    font-size: 10px;
+    font-weight: bold;
+    color: #FF4F50;
+    margin-left: auto;
+    margin-right: 0;
+    width: max-content;
+}
+
+.red {
+    color: #FF4F50;
+}
+
+.money {
+    width: 7%;
+    border-radius: 5px;
+    background-color: #FFFACD;
+    padding: 5px;
+    position: absolute;
+    left: 32.3%;
+    bottom: 67%;
+    max-width: 70px;
+}
+
+
+.money img {
+    width: 100%;
+}
+
+.percentage {
+    font-weight: bold;
+    color: #707070;
+    font-size: 13px;
+}
+
+
+
+.second_step .step_explanation {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.step_explanations {
+    width: 100%;
+}
+
+.step_images {
+    width: 100%;
+    position: relative;
+}
+
+.step_images .step_image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    max-width: 30%;
+}
+
+.second_step .arrow_1 img {
+    width: 100%;
+    margin: auto;
+    max-width: 70px;
+}
+
+.second_step .arrow_2 img {
+    width: 100%;
+    margin: auto;
+    max-width: 70px;
+}
+
+.second_step .arrow_1 {
+    width: 7%;
+    position: absolute;
+    bottom: 40%;
+    left: 32%;
+}
+
+.second_step .arrow_2 {
+    width: 7%;
+    position: absolute;
+    bottom: 40%;
+    left: 61%;
+}
+
+.second_step_for_smartphone {
+    display: none;
+}
+
+.sell_flow_contents {
+    background: #DEEEEE;
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+.buy_flow_contents {
+    background: #FFF5EE;
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+.message {
+    display: none;
+}
+
+.messages_div {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.function_wrap {
+    max-width: 900px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.function_image {
+    width: 30%;
+    display: inline-block;
+    max-width: 250px;
+    vertical-align: middle;
+}
+
+.function_image img {
+    width: 100%;
+}
+
+.for_smart_phone {
+    display: none;
+}
+
+
+
+#card_security_img {
+    display: block;
+    margin: auto;
+    width: 50%;
+    min-width: 300px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    max-width: 450px;
+}
+
+#card_security_img_for_smartphone {
+    display: block;
+    margin: auto;
+    width: 50%;
+    min-width: 300px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    max-width: 450px;
+}
+
+#logo_mark_blue {
+    display: none;
+}
+
+.logo_mark_blue_message {
+    display: none;
+}
+
+.refund_explain_wrap {
+    background-color: #FFFAFA;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    font-weight: bold;
+}
+
+.refund_explain_title {
+    text-align: center;
+    font-size: 30px;
+    width: max-content;
+    margin: auto;
+    color: #5c5c5c;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.cases_div {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.cases_content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.bg_slide {
+  width: 100%;
+  background: url("https://bors.jp/static/items_3.png");
+  animation: bg_slide 100s linear infinite;
+}
+@keyframes bg_slide {
+    0% { background-position: 0 0;}
+  100% { background-position: -1500px 0;}
+}
+
+.register_button {
+    padding: 10px;
+    width: max-content;
+    background-color: #f4a460;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-weight: bold;
+    color: #FFF;
+    outline: none;
+    display: inline-block;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 30%);
+}
+
+.register_button:hover {
+    background:#d2691e;
+    outline: none;
+}
+
+
+.messages_div a {
+    width: auto;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+
+.buy_flow_button {
+    background-color: #F08080;
+    margin-right: 10px;
+}
+
+.buy_flow_button:hover {
+    background-color: #FF4F50;
+}
+
+.sell_flow_button {
+    background-color: #48D1CC;
+}
+
+.sell_flow_button:hover {
+    background-color: #20B2AA;
+}
+
+
+@media screen and (max-width:330px){
+
+#logo_mark_blue {
+    display: block;
+    width: 40%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.logo_mark_blue_message {
+    display: block;
+    width: 100%;
+    margin: auto;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#card_security_img_for_smartphone {
+    display: none;
+}
+
+}
+
+
+
+/* サービスの特徴 スマホ用 */
+/* step.2 スマホ用 */
+@media screen and (max-width:710px){
+/* step.2 スマホ用 */
+.second_step {
+    display: none;
+}
+
+.second_step_for_smartphone {
+    display: block;
+}
+
+.second_step_for_smartphone .step_image img {
+    width: 40vw;
+    margin: auto;
+    max-width: 200px;
+}
+
+.second_step_for_smartphone .step_image {
+    width: 40vw;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+.second_step_for_smartphone .money {
+    width: 60px;
+    border-radius: 5px;
+    background-color: #FFFACD;
+    padding: 5px;
+    margin-bottom: 10px;
+    position: static;
+}
+
+.second_step_for_smartphone .arrow_and_step_wrap {
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* サービスの特徴 スマホ用 */
+.for_smart_phone {
+    display: block;
+}
+
+.for_pc {
+    display: none;
+}
+
+.for_smart_phone .function_content {
+    display: block;
+    width: 100%;
+}
+
+.for_smart_phone .function_image {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+
+}
+
+.fee_explain {
+    width: max-content;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.commission {
+    text-align: center;
+    font-weight: bold;
+    color: #707070;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#margin_top {
+    margin-top: 40px;
+}
+
+
+@media screen and (max-width:750px){
+
+.step_sub_content {
+    display:block;
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20;
+}
+
+.step_explain {
+    display:block;
+    width:100%;
+}
+
+
+}
+
+
+@media screen and (max-width:500px){
+
+.page_title {
+    font-size:20px;
+}
+
+.step_title {
+    font-size:17px;
+}
+
+.function {
+    font-size:17px;
+}
+
+.post_explain_wrap {
+    width:90%;
+}
+
+.fee_explain_wrap {
+    width:90%;
+}
+
+}
+
+.refund_detail {
+    color: orange;
+}
+
+.talkroom_do {
+    color: #FF4F50;
+}
+
+.input_image img {
+    width: 12vw;
+    min-width: 70px;
+    max-width: 120px;
+}
+
+.upload_image {
+    min-width: 120px;
+}
+
+.upload_image img {
+    width: 100%;
+}

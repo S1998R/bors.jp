@@ -1,0 +1,28 @@
+{% extends 'accounts_base.html' %}
+{% load static %}
+{% block title %}ログイン{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/zSKvcMZezflGJYb.css' %}">{% endblock %}
+
+{% block content %}
+<div class="login">
+    <div class="title">ログイン</div>
+    <form method="POST" name="form1">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="register_button_div">
+        <a class="register_button" href="javascript:form1.submit()">ログイン</a>
+        </div>
+
+        {% if user.is_authenticated %}
+            <p>ログイン済</p>
+
+            <a class="register_button" href="{% url 'account_logout' %}">ログアウト</a>
+        {% endif %}
+
+    </form>
+    <div class="others">
+        <a class="other" href="{% url 'account_reset_password' %}">パスワードをお忘れですか？</a>
+        <a class="other" href="{% url 'account_signup' %}">新規登録</a>
+    </div>
+</div>
+{% endblock %}

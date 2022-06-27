@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}アカウント編集 | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="アカウント編集">
+{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/Ow2Pz0OGlWhHemS.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="confirm_form">
+            <form enctype="multipart/form-data" action="{% url 'neighbor_app:account_edit' %}" method="POST" onSubmit="return nidoosi(this)" id="account_edit_form">
+                {% csrf_token %}
+
+                <div class="field image_field">
+                    <div class="my_image_area">
+                        {% if not user.image %}
+                            <img class="user-image" id="user-image" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                            <img class="user-image none" id="user-image_normal" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                            <div id="canvas_div"><canvas id="preview"></canvas></div>
+                        {% else %}
+                            <img src="{{ user.image.url }}" class="user-image" id="user-image">
+                            <img class="user-image none" id="user-image_normal" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                            <div id="canvas_div"><canvas id="preview"></canvas></div>
+                        {% endif %}
+                    </div>
+                    <div class="account_image_div">
+                        <label class="image" id="image_div">
+                            <span id="image_span"><i class="far fa-images"></i> 画像を選択</span><input type="file" name="image" accept="image/*" id="id_image" class="js-upload-file" onchange="previewImage(this);">
+                        </label>
+                    </div>
+                    <div class="account_image_div"><input type='button' id='clearbtn' value='取消' onClick='clearFile(event)'></div>
+                    <input type="hidden" value="initial" name="image_clear" id="image_clear">
+                    {% if form.image.errors %}
+                            {{ form.image.errors }}
+                    {% endif %}
+                    <div id="account_none_error"></div>
+                </div>
+
+                <div class="field">
+                    <div class="sub_title">ユーザー名：</div>
+                    {{ user.username }}<br>
+                    {% if form.username.errors %}
+                            {{ form.username.errors }}
+                    {% endif %}
+                    <p class="important_message">※ユーザー名は変更できません。</p>
+                    <span id="exist1"></span>
+                </div>
+
+                <div class="field">
+                    <div class="sub_title">アドレス：</div>
+                    <p>{{ user.email }}</p>
+                    <p class="important_message">※メールアドレスは変更できません。</p>
+                </div>
+
+                <div class="field">
+                    <div class="sub_title">大学：</div>
+                    <p>{{ user.university }}</p>
+                    <p class="important_message">※大学は変更できません。</p>
+                </div>
+
+                <div class="field">
+                    <div class="sub_title">自己紹介：</div>
+                    {{ form.profile }}
+                </div>
+
+                <div id="account_none_error_message"></div>
+
+                <div class="field">
+                    <button type="submit" class="register_button" id="account_submit_button">更新</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'js/qukkMs25v2ftWKV.js' %}"></script>
+
+{% endblock %}

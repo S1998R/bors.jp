@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}お知らせ一覧 | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="お知らせ一覧">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/NxYkQM6JZYqLKt5.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="page_title">
+            <div>お知らせ</div>
+        </div>
+
+        {% for announce in announce_list %}
+
+            <a href="{% url 'neighbor_app:information_detail' announce.pk %}" class="information_a">
+            <div class="announce_title">
+                ・{{ announce.title }}
+            </div>
+            </a>
+
+        {% endfor %}
+
+    <div>
+        <div class="nav_div">
+            <nav>
+                <ul id="nav">
+                    {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}"><li>前へ</li></a>
+                    {% endif %}
+
+                    {% for i in page_obj.paginator.page_range %}
+                    {% if page_obj.number == i %}
+                    <li class="now_page">{{ i }}</li>
+                    {% else %}
+                    <a href="?page={{ i }}"><li>{{ i }}</li></a>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}"><li>次へ</li></a>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    </div>
+{% endblock %}

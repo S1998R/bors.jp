@@ -1,0 +1,562 @@
+.card_information {
+    margin: 20px;
+    text-align: center;
+}
+
+.tenant_register_button {
+    display: inline-block;
+    width: 120px;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.tenant_register_button a {
+    text-decoration: none;
+    color: #000;
+}
+
+.buy_form {
+    display: inline-block;
+    width: max-content;
+    vertical-align: top;
+}
+
+.register_button_div_in_a {
+    text-decoration: none;
+    padding: 5px 15px;
+    background: #fff;
+    outline: none;
+    font-size: 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    border: solid #000000 1px;
+    color: #000000;
+    text-align: center;
+    margin-left: 20px;
+    height: fit-content;
+    /*margin-top: 10px;*/
+    width: max-content;
+    margin: auto;
+}
+
+.register_button_div_in_a:hover {
+    background:#f4a460;
+    color:#fff;
+    border:solid #fff 1px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.register_button_div_in_a:active {
+    background:#d2691e;
+}
+
+/*
+#payjp_checkout_box input[type=button] {
+    background-color: #FFFFFF !important;
+    color: #fff !important;
+    background-image: none !important;
+    margin-top: 20px;
+    border-color: #000 !important;
+    background-color: #f4a460 !important;
+    border: none;
+    min-width: 200 px;
+    color: #FFF;
+    width: 200px;
+    font-size: 20px !important;
+    border: none !important;
+}*/
+
+#payjp_checkout_box {
+    width: max-content;
+    display: inline-block;
+}
+
+#payjp_checkout_box input[type=button] {
+    text-decoration: none;
+    padding: 5px 15px !important;
+    background: #fff;
+    outline: none;
+    font-size: 20px !important;
+    border-radius: 5px !important;
+    font-weight: bold;
+    border: solid #000000 1px;
+    color: #000000;
+    text-align: center;
+    height: fit-content;
+    /*margin-top: 10px;*/
+    background-color: #f4a460 !important;
+    border: none !important;
+    width: 120px !important;
+    color: #FFF;
+    position: static;
+    width: auto;
+    background-image: none !important;
+}
+
+#payjp_checkout_box input[type=button]:hover {
+    background:#d2691e !important;
+}
+
+
+.request_buy_button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 15px;
+    background: #fff;
+    outline: none;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: solid #000000 1px;
+    color: #000000;
+    text-align: center;
+    height: fit-content;
+    /*margin-top: 10px;*/
+    background: #f4a460;
+    border: none;
+    width: 120px;
+    color: #FFF;
+    position: static;
+}
+
+.request_buy_button:hover {
+    background:#d2691e !important;
+    cursor: pointer;
+}
+
+.buttons {
+    width: max-content;
+    margin: auto;
+}
+
+.card_register_form {
+    text-align: center;
+}
+
+.fee_explain {
+    width: max-content;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.flow_wrap {
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+    max-width: 1500px;
+}
+
+.first_step {
+    margin-bottom: 30px;
+}
+
+.step_title {
+    margin: auto;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 20px;
+    background-color: #FF4F50;
+    width: max-content;
+    border-radius: 5px;
+}
+
+.second_step {
+    max-width: 1300px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.step_wrap {
+    width: max-content;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    vertical-align: middle;
+}
+
+.step_image {
+    width: 20vw;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 200px;
+}
+
+.step_image img {
+    width: 20vw;
+    margin: auto;
+    max-width: 200px;
+}
+
+
+.step_explanation {
+    text-align: center;
+    font-weight: bold;
+    color: #808080;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    width: max-content;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.arrow img {
+    width: 50px;
+    margin: auto;
+}
+
+.arrow_and_step_wrap {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+.fee_explain_detail {
+    font-weight: bold;
+    color: #707070;
+    margin-bottom: 15px;
+}
+
+.sub_explain {
+    font-size: 10px;
+    font-weight: bold;
+    color: #FF4F50;
+    margin-left: auto;
+    margin-right: 0;
+    width: max-content;
+}
+
+.red {
+    color: #FF4F50;
+}
+
+.money {
+    width: 7%;
+    border-radius: 5px;
+    background-color: #FFFACD;
+    padding: 5px;
+    position: absolute;
+    left: 32.3%;
+    bottom: 67%;
+    max-width: 70px;
+}
+
+
+.money img {
+    width: 100%;
+}
+
+.percentage {
+    font-weight: bold;
+    color: #707070;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+.second_step .step_explanation {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.step_explanations {
+    width: 100%;
+}
+
+.step_images {
+    width: 100%;
+    position: relative;
+}
+
+.step_images .step_image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    max-width: 30%;
+}
+
+.second_step .arrow_1 img {
+    width: 100%;
+    margin: auto;
+    max-width: 70px;
+}
+
+.second_step .arrow_2 img {
+    width: 100%;
+    margin: auto;
+    max-width: 70px;
+}
+
+.second_step .arrow_1 {
+    width: 7%;
+    position: absolute;
+    bottom: 40%;
+    left: 32%;
+}
+
+.second_step .arrow_2 {
+    width: 7%;
+    position: absolute;
+    bottom: 40%;
+    left: 61%;
+}
+
+.second_step_for_smartphone {
+    display: none;
+}
+
+#card_security_img {
+    display: block;
+    margin: auto;
+    width: 50%;
+    min-width: 300px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    max-width: 450px;
+}
+
+.bold {
+    font-weight: bold;
+    color: #707070;
+}
+
+/* step.2 スマホ用 */
+@media screen and (max-width:710px){
+
+.second_step {
+    display: none;
+}
+
+.second_step_for_smartphone {
+    display: block;
+}
+
+.second_step_for_smartphone .step_image img {
+    width: 40vw;
+    margin: auto;
+    max-width: 200px;
+}
+
+.second_step_for_smartphone .step_image {
+    width: 40vw;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+.second_step_for_smartphone .money {
+    width: 60px;
+    border-radius: 5px;
+    background-color: #FFFACD;
+    padding: 5px;
+    margin-bottom: 10px;
+    position: static;
+}
+
+.second_step_for_smartphone .arrow_and_step_wrap {
+    display: block;
+    margin-bottom: 20px;
+}
+
+}
+
+/* 出品アイコン関係 */
+.to_sell_form_area {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    background: #f4a460;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.to_sell_form_area:hover {
+    background-color: #d2691e
+}
+
+.fa-camera {
+    color: #FFF;
+    font-size: 30px;
+}
+
+.camera_icon {
+    margin: auto;
+    position: absolute;
+    top: 15;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: max-content;
+    text-align: center;
+}
+
+.to_sell_form_area_message {
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+    top: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    color: #FFF;
+}
+
+/* 出品アイコン */
+@media screen and (max-width: 750px){
+
+.to_sell_form_area {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    background: #f4a460;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.camera_icon {
+    margin: auto;
+    position: absolute;
+    top: 20;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: max-content;
+    text-align: center;
+}
+
+.fa-camera {
+    color: #FFF;
+    font-size: 25px;
+}
+
+.to_sell_form_area_message {
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+    top: 5;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    color: #FFF;
+}
+
+
+
+}
+
+/* ここまで出品アイコン関係 */
+
+
+
+.card_message {
+    text-align: right;
+    font-size: 13px;
+    font-weight: bold;
+    color: #707070;
+}
+
+
+.center {
+    text-align: center;
+}
+
+.sell_flow_contents {
+    background: #DEEEEE;
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+
+.no_card_message {
+    font-weight: bold;
+    color: #707070;
+    text-align: left;
+}
+
+.card_pay_message {
+    font-weight: bold;
+    color: #707070;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.annotation {
+    font-weight: bold;
+    font-size: 13px;
+    text-align: left;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.pay_list {
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    color: #707070;
+}
+
+.merchandise_name {
+    font-weight: bold;
+}
+
+.sell_commission {
+    font-weight: bold;
+    color: red;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.center {
+    text-align: center;
+}
+
+.important {
+    color: orange;
+}
+
+.card_message_top {
+    padding-top: 20px;
+    border-top: dashed 0.5px;
+    margin-top: 30px;
+}
+
+.card_brand {
+    text-align: center;
+    font-weight: bold;
+    color: #707070;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.input_image img {
+    width: 12vw;
+    min-width: 70px;
+    max-width: 120px;
+}
+
+.upload_image {
+    min-width: 120px;
+}
+
+.upload_image img {
+    width: 100%;
+}

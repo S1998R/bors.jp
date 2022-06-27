@@ -1,0 +1,15 @@
+{{ username }}様から返金のリクエストがありました。
+直ちに対応して下さい。
+
+配送先住所、もしくは取引の場所・日時を決定した後ですか？: {{ cases }}
+
+■トークルーム
+id : {{ talk_room_id }}
+
+■リクエスト者情報
+ユーザー名 : {{ username }}
+商品名 : {{ merchandise_name }}
+
+返金手続きのurl
+{{ refund_page_url }}
+

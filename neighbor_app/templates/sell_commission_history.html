@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}手数料の履歴 | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="手数料の履歴">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/kenABfqNsOCT2B8.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="page_title"><div>手数料の履歴</div></div>
+
+    <div class="sell_commission_message">販売手数料はトークルームが作成された時点で発生します。<div class="annotation inline-block">※手数料は商品価格の8％です。</div></div>
+
+    {% for talk in talks %}
+
+        <div class="content">
+
+            {% if talk.updated_at %}
+                <div class="created_at">{{ talk.updated_at }}</div>
+            {% else %}
+                <div class="created_at">{{ talk.created_at }}</div>
+            {% endif %}
+
+            <div class="merchandise_name">{{ talk.merchandise.merchandise_name }}：</div><div class="sell_commission">{{ talk.merchandise.sell_commission }} 円</div>
+            {% if talk.refund_request_status %}
+                <div class="refund_request_status">返金リクエスト済み</div>
+            {% endif %}
+        </div>
+
+    {% endfor %}
+
+    {% if not talks %}
+
+        <div class="sell_commission_message">現在、販売手数料は発生していません。</div>
+
+    {% endif %}
+
+</div>
+
+
+{% endblock %}

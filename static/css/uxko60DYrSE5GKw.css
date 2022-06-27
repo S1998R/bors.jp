@@ -1,0 +1,1000 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+a {
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+/* リセットCSS */
+/*リセットcss*/
+/*解説　https://coliss.com/articles/build-websites/operation/css/a-modern-css-reset.html*/
+/* Box sizing rules */
+/* Box sizingの定義 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+/* デフォルトのpaddingを削除 */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+/* デフォルトのmarginを削除 */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+/* bodyのデフォルトを定義 */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+    background-color: #fafafa;
+    font-family: canada-type-gibson, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+/* class属性を持つul、ol要素のリストスタイルを削除 */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+/* classを持たない要素はデフォルトのスタイルを取得 */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+/* img要素の扱いを簡単にする */
+img {
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+/* article要素内の要素に自然な流れとリズムを定義 */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+/* inputやbuttonなどのフォントは継承を定義 */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+/* 見たくない人用に、すべてのアニメーションとトランジションを削除 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*-------------------------------------------*/
+
+/*画面の向きを横や縦にしても、文字サイズを変更しない*/
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+/* すべてのdiv, pで、半角英数を折り返す */
+div, p {
+    word-break: break-all;
+}
+
+
+/*------------header--------------------*/
+/*smart phone*/
+.pc_only_display {
+    display: none;
+}
+
+.message {
+    margin: auto;
+    width: 80%;
+    background: #FFFFDD;
+    margin-top: 60px;
+}
+
+.wrapper{
+    min-height: 100vh;
+}
+
+/*smart phone header*/
+header.site_header{
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: #fafafa;
+    z-index: 100;
+    border-bottom: solid #666666;
+}
+
+ul#header_menu_content {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    padding-right: 10px;
+}
+
+li.header_menu_item a {
+    margin-left: 22px;
+    text-decoration: none;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+    border-radius: 15px;
+    font-weight: bold;
+    border: solid #000000 1px;
+    color: #000000;
+    padding: 5px;
+}
+
+.border_none  a {
+    border: none !important;
+}
+
+button.account_btn {
+    display: inline-block;
+    height: 26px;
+    width: 80px;
+    font-size: 15px;
+    padding: 0;
+    color: #F29F05;
+    background-color: #FFF;
+    border: solid 1px #F29F05;
+    border-radius: 13px;
+    box-shadow: 1.5px 1.5px 5px #BCBCBC;
+    outline:none;
+}
+
+nav.header_info {
+    width: 75%;
+}
+
+.header_logo {
+    width: 25%;
+    margin-left: 10px;
+    max-width: 200px;
+}
+
+.header_logo a img {
+    width: 140px;
+    margin: 0;
+}
+/*----------------ここまでheader------------------*/
+
+
+main {
+  padding-top: 70px;
+  min-height: 100%;
+}
+
+main > div {
+  margin: auto;
+}
+
+
+
+/*バーガーメニュー*/
+.button {
+  position: absolute;
+  margin-top:70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 40px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-left: 15px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  outline:none;
+  opacity: .7 ;
+  background: #000;
+}
+
+.icon-bar {
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: #FFF;
+  transition: .3s;
+  margin-right:auto;
+  margin-left:auto;
+}
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+/*javascript用*/
+.nth-of-type1_js {
+  transform: translate3d(0,8px,0) rotate(45deg) ;
+}
+.nth-of-type2_js {
+  opacity: 0 ;
+}
+.nth-of-type3_js {
+  transform: translate3d(0,-8px,0) rotate(-45deg) ;
+}
+
+/*---------------------ここまでバーガーマークのアニメーション-------------------------*/
+
+
+/*-------------------------------------------------------*/
+
+/*サイドバーが起動したときの右側の黒い領域*/
+#nav-container .bg {
+  position: absolute;
+  top: 50;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  background: #000;
+}
+
+/*javascript用*/
+.bg_js {
+  visibility: visible !important;
+  opacity: .6 !important;
+}
+
+/*----------------------------------------*/
+
+/*サイドバーナビゲーション*/
+#nav-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 100;　　/* right_contentより上に表示 */
+}
+
+#nav-content {
+  padding-top: 60px;
+  width: 90%;
+  max-width: 200px;
+  position: absolute;
+  top: 50;
+  left: 0;
+  height: 100%;
+  pointer-events: auto;
+  transform: translateX(-100%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+  font-size:15px;
+  font-weight:bold;
+  color: #F29F05;
+  overflow:auto;
+  outline:none;
+  background-color: #3a302d;
+}
+
+/*javascript用*/
+.transform_none_js {
+    transform: none !important;
+}
+
+
+/*chromeでスクロールバーを非表示*/
+::-webkit-scrollbar {
+      display: none;
+      -webkit-appearance: none;
+}
+
+
+#nav-content ul {
+  display: flex;
+  flex-direction: column;
+  padding-left:0px;
+}
+
+/*サイドバーの各タイトル領域*/
+.menu_main_title {
+    margin: 4% 2%;
+    padding: 5px;
+}
+
+.menu_main_title a {
+    color:#FFF;
+    text-decoration: none;
+}
+
+/*タイトル文字*/
+.menu_main_title p {
+    margin: 0% 10%;
+}
+
+/*お知らせの下に隙間作る*/
+#info_title {
+    margin-bottom: 40%
+}
+
+/*ボタンのデザイン*/
+.menu_item button {
+    outline:none;
+    background-color:transparent;
+    border-style:none;
+    font-weight:bold;
+    color:#FFFFCC;
+    font-size:15px;
+    padding:0px;
+    cursor:pointer;
+}
+.menu_item button:hover {
+    color:#D92B04;
+}
+
+.menu_main_title button {
+    outline:none;
+    background-color:transparent;
+    border-style:none;
+    font-weight:bold;
+    color:#F29F05;
+    font-size:15px;
+    padding:0px;
+    cursor:pointer;
+}
+.menu_main_title button:hover {
+    color:#D92B04;
+}
+
+
+/*サイドバータイトル下*/
+#nav-content li {
+  padding: 2% 0%;
+  display: block;
+  text-transform: uppercase;
+  transition: color .1s;
+  color: #FFFFCC;
+  text-align:center;
+}
+/*サイドバータイトル下 ホバー*/
+#nav-content li span:hover {
+  color: #D92B04;
+  cursor:pointer;
+}
+
+/*トップとお知らせはタイトルにホバー効果付ける*/
+#top:hover, #info:hover {
+     color: #D92B04;
+     cursor:pointer;
+}
+
+
+.message > p {
+    color: #464999;
+    font-weight: bold;
+}
+
+
+
+/*サイドバーメニュータイトルのアイコン*/
+#top:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f015";
+  margin-right:10px;
+}
+#info:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f0f3";
+  margin-right:10px;
+}
+#post:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f044";
+  margin-right:10px;
+}
+#post_catalog:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f328";
+  margin-right:10px;
+}
+#group_talk:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f086";
+  margin-right:10px;
+}
+#rule:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f249";
+  margin-right:10px;
+}
+
+
+
+/*smart phone footer*/
+
+.wrapper{
+    position: relative;/*←相対位置*/
+    min-height: 100vh;
+}
+
+footer.site_footer{
+    background: #fafafa;;
+    width: 100%;
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+}
+
+nav#footer_info {
+    width: 100%;
+    height: auto;
+}
+
+ul#footer_menu_content {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    padding: 60px 0;
+    flex-wrap: wrap;
+}
+
+ul#footer_sns_content {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+li.footer_menu_item {
+    font-size: 13px;
+    padding: 10px;
+}
+
+li.footer_sns_item {
+    font-size: 18px;
+}
+
+li.footer_menu_item a {
+   text-decoration: none;
+   color: #707070;
+   font-weight: bold;
+}
+
+.fa-instagram:before, .fa-twitter-square:before, .fa-facebook-square:before, .fa-line:before {
+    text-decoration: none;
+    color: #4b4b4b;
+    font-size: 22px;
+    padding: 0 10px;
+}
+
+.copy_right {
+    background:#fff;
+    text-align:center;
+    font-size: 8px;
+    color: gray;
+    width:100%;
+}
+
+
+
+
+/* javascript用 */
+.block {
+    display:flex !important;
+}
+.click {
+    color:#D92B04 !important;
+}
+
+
+
+/*体験する、開催する のformの間隔を無くす*/
+.menu_item form {
+    margin:0;
+}
+
+.menu_main_title form {
+    margin: 0% 10%;
+}
+
+
+
+/*右のメニュー*/
+.rightside_to_hostform button {
+    display:none;
+}
+.rightside_to_gestform button {
+    display:none;
+}
+
+.copy_right {
+    background-color: #fafafa;
+}
+
+/*pc*/
+@media screen and (min-width:768px){
+
+.message {
+    width: 50%;
+}
+
+
+.header_logo a img {
+    width: 200px;
+}
+
+/*バーガーメニュー*/
+.button {
+  margin-top:100px;
+}
+
+#nav-container .bg {
+    top: 80;
+}
+
+#nav-content {
+    top: 80;
+}
+
+
+/*pc header*/
+header.site_header{
+    height: 80px;
+}
+
+li.header_menu_item {
+    height: 26px;
+    line-height: 26px;
+}
+
+li.header_menu_item a {
+    color: #707070;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    border: none;
+    padding-top: 5px;
+}
+
+li.header_menu_item_sp a {
+    padding-top: 0px;
+}
+
+
+button.account_btn {
+    color: #707070;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-left: 22px;
+    position: relative;
+    display: inline-block;
+}
+
+nav.header_info {
+    margin-left: auto;
+    margin-right: 30px;
+    width: 40%;
+}
+
+.username_title_pc {
+    display: flex;
+    width: 60%;
+    margin-left: 20px;
+    color: #707070;
+    font-size: 15px;
+}
+
+li.header_menu_item a::after, button.account_btn::after {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #F29F05;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+}
+
+
+span.hidden {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 50%;
+    text-align:right;
+}
+
+span.not_hidden {
+    width: 60%;
+}
+
+}
+
+
+/*　pc　*/
+@media screen and (min-width:768px){
+#nav-container .bg {
+}
+
+
+#nav-container {
+  position: static;
+  width: auto;
+}
+
+ul#footer_sns_content {
+    background:#fff;
+}
+
+/*------------2カラムの構造に必要--------------------*/
+#wrap {
+  width:100%;
+}
+
+#nav-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+footer {
+  clear: both;
+}
+
+header.site_header {
+  z-index:100;
+}
+
+main {
+    padding-top:80px;
+}
+/*------------ここまで2カラムに必要-------------------*/
+
+
+}
+
+
+
+.mark {
+    height: 7px;
+    width: 7px;
+    background: #ff0000;
+    border-radius: 10px;
+    display: inline-flex;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+@media screen and (min-width:1000px){
+
+/*右側のメニュー*/
+.gest_flag_circle {
+    width: 14px;
+    height: 14px;
+    background: #a0522d;
+    border-radius: 20px;
+    position: fixed;
+    right: 68;
+    top: 205;
+}
+
+.div_rightside_to_gestform {
+    position: fixed;
+    right: 0;
+    top: 207;
+    width: 70px;
+    height: 150px;
+    border-top: solid 10px #a0522d;
+}
+.rightside_to_gestform {
+   position: fixed;
+    right: 10;
+    top: 205;
+    width: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border-top: solid 0.5px #000;
+}
+.rightside_to_gestform button {
+    display:block;
+    background: #ffb6c1;
+    outline: none;
+    border-top: none;
+    padding-bottom: 24px;
+    padding-top: 10px;
+    border-left: solid 2px #000;
+    border-right: solid 2px #000;
+    cursor:pointer;
+}
+.rightside_to_gestform button:hover {
+    background: #f08080;
+}
+.rightside_to_gestform button:active {
+    color: #fff;
+}
+
+.gest_flag_square {
+    top: 341;
+    right: 18;
+    width: 34;
+    height: 34;
+    background: #fff;
+    position: fixed;
+    border-top: solid 2px;
+    border-left: solid 2px;
+    transform: rotate(45deg);
+}
+
+.gest_back_flag {
+    position: fixed;
+    background: #f08080;
+    outline: none;
+    border: solid 2px #000;
+    z-index: -1;
+    transform: rotate(7deg);
+    height: 130px;
+    width: 40px;
+    top: 206;
+    right: 28;
+    box-shadow: 0 0px 23px 0 rgba(0, 0, 0, .6);
+}
+
+
+
+
+.host_flag_circle {
+    width: 14px;
+    height: 14px;
+    background: #a0522d;
+    border-radius: 20px;
+    position: fixed;
+    right: 68;
+    top: 399;
+}
+
+.div_rightside_to_hostform {
+    position: fixed;
+    right: 0;
+    top: 401;
+    width: 70px;
+    height: 150px;
+    border-top: solid 10px #a0522d;
+}
+.rightside_to_hostform {
+    position: fixed;
+    right: 10;
+    top: 398;
+    width: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border-top: solid 0.5px #000;
+}
+.rightside_to_hostform button {
+    display:block;
+    background: #ffb6c1;
+    outline: none;
+    border-top: none;
+    padding-bottom: 24px;
+    padding-top: 10px;
+    border-left: solid 2px #000;
+    border-right: solid 2px #000;
+    cursor:pointer;
+}
+.rightside_to_hostform button:hover {
+    background: #f08080;
+}
+.rightside_to_hostform button:active {
+    color: #fff;
+}
+
+.host_flag_square {
+    top: 534;
+    right: 18;
+    width: 34;
+    height: 34;
+    background: #fff;
+    position: fixed;
+    border-top: solid 2px;
+    border-left: solid 2px;
+    transform: rotate(45deg);
+}
+
+.host_back_flag {
+    position: fixed;
+    background: #f08080;
+    outline: none;
+    border: solid 2px #000;
+    z-index: -1;
+    transform: rotate(7deg);
+    height: 130px;
+    width: 40px;
+    top: 400;
+    right: 28;
+    box-shadow: 0 0px 23px 0 rgba(0, 0, 0, .6);
+}
+
+}
+
+
+.z-index {
+    z-index: -100;
+}
+
+
+.user-icon {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1.5px solid #eee;
+}
+
+li.user_image {
+    margin-left: 20px;
+}
+
+@media screen and (min-width:300px){
+
+li.without_login_singnup_button {
+    display: block;
+    height: max-content;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+}
+
+@media screen and (min-width:430px){
+
+li.with_login_singnup_button{
+        display: list-item;
+}
+
+}
+
+/* 出品アイコン */
+.to_sell_form_area {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    background: #f4a460;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.to_sell_form_area:hover {
+    background:#d2691e;
+}
+
+.fa-camera {
+    color: #FFF;
+    font-size: 30px;
+}
+
+.camera_icon {
+    margin: auto;
+    position: absolute;
+    top: 15;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: max-content;
+    text-align: center;
+}
+
+.to_sell_form_area_message {
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+    top: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    color: #FFF;
+}
+
+/* 出品アイコン */
+@media screen and (max-width: 750px){
+
+.to_sell_form_area {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    background: #f4a460;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.camera_icon {
+    margin: auto;
+    position: absolute;
+    top: 20;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: max-content;
+    text-align: center;
+}
+
+.fa-camera {
+    color: #FFF;
+    font-size: 25px;
+}
+
+.to_sell_form_area_message {
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+    top: 5;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    color: #FFF;
+}
+
+}
+
+#mainImg img {
+    margin: auto;
+}
+
+.menu_main_title i {
+    margin-right: 10px;
+}

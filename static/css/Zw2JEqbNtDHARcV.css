@@ -1,0 +1,26 @@
+.purchase_history {
+    padding: 20px;
+    border-bottom: solid 0.5px #CCCCCC;
+}
+
+.purchase_time {
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #FFFFCC;
+    width: max-content;
+    font-weight: bold;
+}
+
+.merchandise_name {
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px;
+    max-width: max-content;
+}
+
+.value {
+    color: red;
+    display: inline-block;
+    width: max-content;
+}

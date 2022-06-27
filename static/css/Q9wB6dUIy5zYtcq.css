@@ -1,0 +1,114 @@
+.confirm_form {
+    width: 60%;
+    max-width:500;
+    padding-bottom: 120px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.confirm_form input {
+	-webkit-appearance: none;
+	width:100%;
+}
+
+.inquiry_div {
+    width:100%;
+}
+
+.main {
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.to_us_form_title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.form {
+    margin-top:10px;
+}
+
+textarea {
+    -webkit-appearance: none;
+    border: solid 1px #000;
+    width: 100%;
+    border-radius:10px;
+    padding: 6px 12px;
+}
+
+.important {
+    font-weight:bold;
+    color:orange;
+}
+
+input {
+    border:1px solid #000;
+    padding: 6px 12px;
+    border-radius:10px;
+}
+
+input:focus, textarea:focus {
+	border: 0.5px solid #F29F05;
+	outline: none;
+	box-shadow: 0 0 2px 1px #F29F05;
+}
+
+/* 送信ボタン */
+.confirm_form button {
+    padding: 5px 15px;
+    background: #fff;
+    outline: none;
+    border: solid #000 1px;
+    font-size: 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+.confirm_form button:hover {
+    background:#f4a460;
+    color:#fff;
+    border:solid #fff 2px;
+    cursor: pointer;
+}
+
+.confirm_form button:active {
+    background:#d2691e;
+}
+
+.to_us_form_button_div {
+    width:max-content;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #707070;
+    text-align: center;
+    margin-top: 70px;
+}
+
+@media screen and (max-width:936px){
+
+.confirm_form {
+    padding-bottom: 200px;
+}
+
+}
+
+@media screen and (max-width:500px){
+
+.confirm_form {
+    width: 90%;
+}
+
+}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}アカウント | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="アカウント">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/2ri7EwnuNffzNFT.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+            <div class="account_content">
+
+                {% if not user.image %}
+                    <img class="user-image" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                {% else %}
+                    <img src="{{ user.image.url }}" class="user-image">
+                {% endif %}
+
+                <div class="account_information_factor">
+                    <div class="username">{{ user.username }}</div>
+                </div>
+
+
+                <div class="account_information_factor">
+                    <div class="profile_title">アドレス</div><div class="profile_content">{{ user.email }}</div>
+                </div>
+
+                <div class="account_information_factor">
+                    <div class="profile_title">大学</div><div class="profile_content">{{ user.university }}</div>
+                </div>
+
+
+                <div class="account_information_factor">
+                    <div class="profile_title">自己紹介</div><div class="profile_content">{{ user.profile }}</div>
+                </div>
+
+            </div>
+
+            <div class="confirm_form">
+            <a href="{% url 'neighbor_app:account_edit' %}">
+            <button type="submit" class="account_form">編集</button>
+            </a>
+
+
+            <form class="retire_form" action="{% url 'neighbor_app:retire' %}" method="POST" onSubmit="return retire_check(this)">
+                {% csrf_token %}
+                <button type="submit" class="retire_button">退会</button>
+            </form>
+
+            </div>
+
+     </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/ph98FuesSXaMQqK.js' %}"></script>
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+.field {
+    text-align: center;
+    width: 90%;
+    padding-top: 20px;
+    margin: auto;
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: solid 1px;
+    background: white;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: solid 1px;
+    background: white;
+    width: 100%;
+}

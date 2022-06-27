@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}メール受け取り設定 | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="メール受け取り設定">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/slm4TE2LfaHPuRm.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+
+        <div class="page_title">
+            <div>メール受け取り設定</div>
+        </div>
+
+        <div class="confirm_form">
+            <form enctype="multipart/form-data" action="{% url 'neighbor_app:email_request' %}" method="POST" onSubmit="return nidoosi(this)">
+                {% csrf_token %}
+                <div class="field">
+                    メールを受け取る：{{ form.email_permission }}
+                </div>
+
+                <div class="field">
+                    <button type="submit" class="register_button">更新</button>
+                </div>
+
+            </form>
+
+        </div>
+
+        <div>
+            <p class="important_message">※運営からユーザー様への一斉メールに関する設定です。<br>※商品の取引に必要な通知は設定に関係なく送信されます。</p>
+        </div>
+
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'js/qukkMs25v2ftWKV.js' %}"></script>
+
+{% endblock %}

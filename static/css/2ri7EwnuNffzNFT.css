@@ -1,0 +1,137 @@
+.account_title {
+    margin-top:30px;
+    text-align:center;
+    border-bottom:solid #F29F05 2px;
+    width: 130px;
+    font-size: 24px;
+}
+
+.success_message {
+    margin-top:40px;
+    text-align:center;
+    font-weight: bold;
+    color: #464999;
+}
+
+.account_content {
+    text-align:center;
+    margin: 30px 0;
+}
+
+.font-size-large {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.user-image {
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3.5px solid #eee;
+    width: 250px;
+    height: 250px;
+    margin: 10px auto;
+}
+.account_content p {
+    font-size: 20px;
+}
+
+p+p {
+    margin-top:15px;
+}
+
+body {
+  width: 100%;
+}
+
+/* ボタン */
+.account_form {
+    color:#000;
+}
+
+.confirm_form {
+    text-align:center;
+}
+.confirm_form a {
+    text-decoration:none;
+}
+
+.confirm_form button {
+    padding:5px 15px;
+    background:#fff;
+    outline:none;
+    border:solid #000 2px;
+    font-size:15px;
+    border-radius:15px;
+    margin: 0 15px;
+    font-weight:bold;
+}
+
+.confirm_form button:hover {
+    background:#f4a460;
+    color:#fff;
+    border:solid #fff 2px;
+    cursor: pointer;
+}
+
+.confirm_form button:active {
+    background:#d2691e;
+}
+
+/* 退会ボタン */
+.retire_button {
+    text-decoration:none;
+    color:#000;
+}
+
+.retire_button:hover {
+    color:#fff;
+    cursor: pointer;
+}
+
+.retire_form {
+    width: max-content;
+}
+
+/*-------------ここまでボタン-------------------*/
+
+
+.retire_form {
+    width: max-content;
+    display: inline-block;
+}
+
+.inline_block {
+    display: inline-block;
+}
+
+.account_information_factor {
+    margin-top: 13px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.profile_content {
+    display: inline-block;
+    width: 70%;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    border-bottom: solid #CCCCCC 0.5px;
+    text-align: left;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+
+.profile_title {
+    font-weight: bold;
+    display: inline-block;
+    width: 25%;
+    color: #707070;
+    vertical-align: top;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 25px;
+    color: #707070;
+}

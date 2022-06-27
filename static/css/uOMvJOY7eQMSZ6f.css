@@ -1,0 +1,21 @@
+.announce_title {
+    width: max-content;
+    max-width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    margin: auto;
+    color: #5c5c5c;
+}
+
+.announce_content {
+    max-width: 100%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.announce_content p {
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    color: #5c5c5c;
+    font-weight: bold;
+}

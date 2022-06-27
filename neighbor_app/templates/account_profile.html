@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}プロフィール | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="プロフィール">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/DsTPl6LTXYgkzwm.css' %}">
+<link rel="stylesheet" href="{% static 'css/2ri7EwnuNffzNFT.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+<link rel="stylesheet" href="{% static 'css/27ByoCjEowyJYIC.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="page_title">
+            <div>プロフィール</div>
+        </div>
+
+        <div class="account_content">
+
+            {% if not partner_user.image %}
+            <img class="user-image" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+            {% else %}
+            <img src="{{ partner_user.image.url }}" class="user-image">
+            {% endif %}
+            <div class="account_information_factor">
+                <div class="username">{{ partner_user.username }}</div>
+            </div>
+
+            <div class="account_information_factor">
+                <div class="profile_title">自己紹介</div><div class="profile_content no_bottom_border">{{ partner_user.profile }}</div>
+            </div>
+
+            <div class="border_div"></div>
+
+        </div>
+
+    </div>
+
+
+
+        <div class="page_title">
+            <p class="profile_merchandises_title">出品した商品</p>
+        </div>
+
+        <div class="image_area" id="id_image_area">
+
+            {% for merchandise in merchandise %}
+                {% if merchandise.display_status is None %}
+
+                    {% if merchandise.category == "textbook" %}
+                        <div class="image_wrap sell_textbook">
+                            <a href="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}">
+                                <div class="image_div">
+
+                                    {% if merchandise.image %}
+                                        <img src="{{ merchandise.image.url }}" loading="lazy">
+                                    {% endif %}
+
+                                    <div class="university_div">
+                                        <a class="university" href="{% url 'neighbor_app:top' %}?university={{ merchandise.user.university }}">
+                                            {{ merchandise.user.university }}
+                                        </a>
+                                    </div>
+
+                                    <div class="faculty_department_div">
+                                        {% if merchandise.faculty.initial %}
+                                            <p class="faculty_initial">
+                                                <a href="{% url 'neighbor_app:top' %}?faculty={{ merchandise.faculty.faculty }}">
+                                                    {{ merchandise.faculty.initial }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                        {% if merchandise.department.initial %}
+                                            <p class="department_initial">
+                                                <a href="{% url 'neighbor_app:top' %}?department={{ merchandise.department.department }}">
+                                                    {{ merchandise.department.initial }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="merchandise_value_div">
+                                        <p class="merchandise_value">
+                                            ￥{{ merchandise.value }}
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+
+                    {% else %}
+                        <div class="image_wrap sell_other">
+                            <a href="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}">
+                                <div class="image_div">
+
+                                    {% if merchandise.image %}
+                                        <img src="{{ merchandise.image.url }}" loading="lazy">
+                                    {% endif %}
+
+                                    <div class="university_div">
+                                        <a class="university" href="{% url 'neighbor_app:top' %}?university={{ merchandise.user.university }}">
+                                            {{ merchandise.user.university }}
+                                        </a>
+                                    </div>
+
+                                    <div class="faculty_department_div">
+                                        {% if merchandise.faculty.initial %}
+                                            <p class="faculty_initial">
+                                                <a href="{% url 'neighbor_app:top' %}?faculty={{ merchandise.faculty.faculty }}">
+                                                    {{ merchandise.faculty.initial }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                        {% if merchandise.department.initial %}
+                                            <p class="department_initial">
+                                                <a href="{% url 'neighbor_app:top' %}?department={{ merchandise.department.department }}">
+                                                    {{ merchandise.department.initial }}
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="merchandise_value_div">
+                                        <p class="merchandise_value">
+                                            ￥{{ merchandise.value }}
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+
+                {% else %}
+
+                    {% if merchandise.category == "textbook" %}
+                    <div class="image_wrap sold_textbook">
+                        <a href="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}">
+                            <div class="image_div">
+
+                            {% if merchandise.image %}
+                                <img src="{{ merchandise.image.url }}" loading="lazy">
+                            {% endif %}
+
+                            <div class="sold_out_div">
+                                <p>sold out</p>
+                            </div>
+                            <div class="university_div">
+                                <a class="university" href="{% url 'neighbor_app:top' %}?university={{ merchandise.user.university }}">
+                                    {{ merchandise.user.university }}
+                                </a>
+                            </div>
+                            <div class="merchandise_value_div">
+                                <p class="merchandise_value">
+                                    ￥{{ merchandise.value }}
+                                </p>
+                            </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="image_wrap sold_other">
+                        <a href="{% url 'neighbor_app:merchandise_detail' merchandise.pk %}">
+                            <div class="image_div">
+
+                            {% if merchandise.image %}
+                                <img src="{{ merchandise.image.url }}" loading="lazy">
+                            {% endif %}
+
+                            <div class="sold_out_div">
+                                <p>sold out</p>
+                            </div>
+                            <div class="university_div">
+                                <a class="university" href="{% url 'neighbor_app:top' %}?university={{ merchandise.user.university }}">
+                                    {{ merchandise.user.university }}
+                                </a>
+                            </div>
+                            <div class="merchandise_value_div">
+                                <p class="merchandise_value">
+                                    ￥{{ merchandise.value }}
+                                </p>
+                            </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endif %}
+                {% endif %}
+
+            {% empty %}
+                <p class="merchandise_empty">現在、商品はありません。</p>
+            {% endfor %}
+
+
+         <div class="empty_item"></div>
+    </div>
+
+    <div class="container under_container">
+        <div class="report_form">
+            <p>このユーザーを通報する</p>
+            <form action="{% url 'neighbor_app:account_profile' partner_user.pk %}" method="POST" onSubmit="return nidoosi(this)">
+            {% csrf_token %}
+                {{ form }}
+            <div class="register_button_div">
+                <button type="submit" class="register_button">通報</button>
+            </div>
+            <input type="hidden" name="pk" value="{{ partner_user.pk }}">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

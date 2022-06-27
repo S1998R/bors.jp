@@ -1,0 +1,40 @@
+.error_page_div {
+    width:100%;
+}
+
+.error_page_message {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #707070;
+    font-weight: bold;
+}
+
+.error_page_div div {
+    text-align:center;
+    margin-top:20;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.error_page_div div a {
+    margin: 30px auto;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #808080;
+}
+
+.error_image {
+    width: 80%;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.error_image img {
+    max-width: 100%;
+}

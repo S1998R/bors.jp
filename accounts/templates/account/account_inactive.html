@@ -1,0 +1,14 @@
+{% extends 'accounts_base.html' %}
+{% load static %}
+{% block title %}無効なアカウント{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/HBOFZLc175GHrPt.css' %}">{% endblock %}
+
+{% block content %}
+<div class="error_page_div">
+<div class="error_page_message">無効なアカウントです</div>
+
+<div><a href="{% url 'neighbor_app:top' %}">トップへ</a></div>
+<div><a href="{% url 'account_login' %}">ログイン</a></div>
+<div><a href="{% url 'account_signup' %}">新規登録</a></div>
+</div>
+{% endblock %}

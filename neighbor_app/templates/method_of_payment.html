@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}お支払い方法 | bors{% endblock %}
+
+{% block head %}
+    <meta name="description" content="お支払い方法">
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/83bCbTkizr093p5.css' %}">
+<link rel="stylesheet" href="{% static 'css/pA4UYRxSV11Vsy9.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="page_title">
+            <div class="inline-block">販売手数料の</div><div class="inline-block">お支払い方法</div>
+        </div>
+
+        {% if no_default_card %}
+
+            <div class="card_information">
+                <div>
+                    {% if no_pay_talks %}
+                        <p class="card_pay_message">お支払い方法を登録すると、購入者とマッチングした商品の手数料の支払いが行われます。</p>
+                        <p class="annotation">※手数料は商品価格の8％です。（価格が625円未満の場合は一律で50円）</p>
+
+                        <p class="card_pay_message">※購入者都合の取引キャンセルの場合、<span class="important">返金が可能</span>ですのでご安心下さい。<a href="{% url 'neighbor_app:about_service' %}#refund">詳しくはこちら</a></p>
+
+                        <p class="card_pay_message card_message_top">お支払い一覧</p>
+                        {% for talk in no_pay_talks %}
+                            <li class="pay_list"><span class="merchandise_name">{{ talk.merchandise.merchandise_name }}</span>: <span class="sell_commission">{{ talk.merchandise.sell_commission }}</span>円</li>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
+        {% else %}
+
+            <div class="card_information">
+                <div>{{ card.brand }} ****{{ card.last4 }}</div>
+            </div>
+
+
+        {% endif %}
+
+        <div class="buttons">
+
+        {% if not already_default_card %}
+            <div class="card_brand">対応ブランド：VISA、mastercard</div>
+            <div class="card_register_form">
+                <form action="{% url 'neighbor_app:card_register' %}" method="post">
+                    {% csrf_token %}
+                    <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="{{ public_key }}" data-text="登録する" data-submit-text="登録する">
+                    </script>
+                </form>
+            </div>
+
+
+        {% else %}
+            <div class="card_brand">対応ブランド：VISA、mastercard</div>
+
+            <div class="buy_form">
+                <form action="{% url 'neighbor_app:card_update' %}" method="post">
+                    {% csrf_token %}
+                    <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="{{ public_key }}" data-text="更新する" data-submit-text="更新する">
+                    </script>
+                </form>
+            </div>
+
+            <div class="tenant_register_button">
+                <form action="{% url 'neighbor_app:card_delete' %}" method="POST" onSubmit="return nidoosi(this)">
+                    {% csrf_token %}
+                    <button type="submit" class="request_buy_button" id="card_delete_button">削除する</button>
+                </form>
+            </div>
+
+        {% endif %}
+
+        <p class="card_message">※デビットカード可</p>
+        <div id="card_send_message"></div>
+        </div>
+
+        <img id="card_security_img" src="{% static 'wkjeyZ4cklx2O9B.svg' %}" alt="logo_mark+text_blue">
+
+    </div>
+
+    <div class="sell_flow_contents">
+        <div class="page_title">
+            <div>販売手数料について</div>
+        </div>
+
+       <div class="fee_explain">
+                <div class="fee_explain_detail">
+                    ・出品無料
+                </div>
+                <div class="fee_explain_detail">
+                    ・買い手が見つかったら商品価格の8％<div class="sub_explain">※下図STEP.2を参照</div>
+                </div>
+                <div class="fee_explain_detail">
+                    ・お支払い方法：クレジットカード
+                </div>
+               <div class="fee_explain_detail">
+                    ・安心の返金対応
+                </div>
+        </div>
+
+
+
+        <div class="flow_wrap">
+            <div class="step_title">
+                step.1 出品
+            </div>
+            <div class="first_step">
+                <div class="step_wrap">
+                    <div class="step_explanation">
+                        商品情報を入力
+                    </div>
+                    <div class="step_image  input_image">
+                        <img src="{% static '8a9gVXS9656fRvc.png' %}" alt="商品情報を入力">
+                    </div>
+                </div>
+
+                <div class="arrow_and_step_wrap">
+                    <div class="arrow">
+                        <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                    </div>
+
+                    <div class="step_wrap">
+                        <div class="step_explanation">
+                            アップロード
+                        </div>
+                        <div class="step_image upload_image">
+                            <img src="{% static 'ybNY76bT92HmFiV.png' %}" alt="アップロード">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step_title">
+                step.2 商品の受け渡し
+            </div>
+
+            <div class="second_step">
+                <div class="step_explanations">
+                    <div class="step_explanation">
+                        購入者が「購入する」<br>をクリック
+                    </div>
+                    <div class="step_explanation">
+                            トークルーム作成
+                    </div>
+                    <div class="step_explanation">
+                            商品を売却
+                    </div>
+                </div>
+
+                <div class="step_images">
+                    <div class="step_image">
+                        <img src="{% static 'ThRiaLQKL5yyXoR.png' %}" alt="購入するをクリック">
+                    </div>
+
+                    <div class="money">
+                        <div class="percentage">手数料<br>8%</div>
+                        <img src="{% static 'lOgx8Ace002aktH.png' %}" alt="販売手数料">
+                    </div>
+
+                    <div class="arrow_1">
+                        <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                    </div>
+
+                    <div class="step_image">
+                        <img src="{% static '3R5qo89L2kNPAxc.png' %}" alt="トークルーム作成">
+                    </div>
+
+                    <div class="arrow_2">
+                        <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                    </div>
+
+                    <div class="step_image">
+                        <img src="{% static 'pv5FumMPuFTsi5e.png' %}" alt="商品の受け渡し">
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="second_step_for_smartphone">
+
+                <div class="step_wrap">
+                    <div class="step_explanation">
+                        購入者が「購入する」<br>をクリック
+                    </div>
+                    <div class="step_image">
+                        <img src="{% static 'ThRiaLQKL5yyXoR.png' %}" alt="購入するをクリック">
+                    </div>
+                </div>
+
+                <div class="arrow_and_step_wrap">
+
+                    <div class="arrow">
+                    <div class="money">
+                        <div class="percentage">手数料<br>8%</div>
+                        <img src="{% static 'lOgx8Ace002aktH.png' %}" alt="販売手数料">
+                    </div>
+
+                        <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                    </div>
+
+                    <div class="step_wrap">
+                        <div class="step_explanation">
+                            トークルーム作成
+                        </div>
+                        <div class="step_image">
+                            <img src="{% static '3R5qo89L2kNPAxc.png' %}" alt="トークルーム作成">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arrow_and_step_wrap">
+                    <div class="arrow">
+                        <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                    </div>
+
+                    <div class="step_wrap">
+                        <div class="step_explanation">
+                            商品を売却
+                        </div>
+                        <div class="step_image">
+                            <img src="{% static 'pv5FumMPuFTsi5e.png' %}" alt="商品の受け渡し">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/rW9UW3Jws3oEc8n.js' %}"></script>
+{% endblock %}

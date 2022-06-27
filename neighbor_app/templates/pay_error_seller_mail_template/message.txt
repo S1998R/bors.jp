@@ -1,0 +1,23 @@
+{{ seller_username }}様、borsをご利用頂きありがとうございます。
+
+{{ seller_username }}様の商品を購入したいお客様が見つかりましたが、
+{{ to_seller_message }}
+
+お支払い方法の登録・修正はこちらから
+https://bors.jp/method_of_payment/
+
+
+------------------------------------------------------
+※本メールは送信専用ですので返信には対応できません。ご了承ください。
+お問い合わせはこちら
+https://bors.jp/inquiry/
+
+ログインページはこちら
+https://bors.jp/accounts/login/
+
+メール受け取り設定の変更はこちら
+https://bors.jp/email_request/
+
+※本メールに心当たりのない場合は至急こちらまでご連絡下さい。
+https://bors.jp/inquiry/
+-------------------------------------------------------

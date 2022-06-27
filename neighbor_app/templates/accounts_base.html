@@ -1,0 +1,109 @@
+{% load static %}
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-218791915-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-218791915-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/0N3XsuBIwfNh21v.css' %}">
+
+    <link rel="icon" href="{% static '65i02AtwuqmzogH.png' %}" sizes="192x192" type="image/png">
+    <link rel="shortcut icon" href="{% static '65i02AtwuqmzogH.png' %}" type="image/png" sizes="32x32">
+    <link rel="shortcut icon" href="{% static '65i02AtwuqmzogH.png' %}" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="{% static '65i02AtwuqmzogH.png' %}" sizes="180x180" type="image/png">
+
+    {% block head %}{% endblock %}
+    {% block css %}{% endblock %}
+    {% block link %}{% endblock %}
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+<main>
+<header class="site_header">
+    <div class="header_logo">
+        <a href="{% url 'neighbor_app:top' %}">
+            <img src="{% static '1QEycLfZBT4Ab8P.png' %}" alt="bors">
+        </a>
+    </div>
+    <nav class="header_info">
+        <ul id="header_menu_content">
+
+            {% if user.is_authenticated %}
+            <li class="pc_only_display header_menu_item header_menu_item_sp without_login_singnup_button to_top"><a class="margin_top_a" href="{% url 'neighbor_app:top' %}">商品一覧</a></li>
+
+                <li class="header_menu_item header_menu_item_sp border_none user_image">
+                    <a class="account_image" href="{% url 'neighbor_app:account' %}">
+                    {% if not user.image %}
+                    <img class="user-icon" src="{% static 'CTCKGfGqrxj75b4.png' %}">
+                    {% else %}
+                    <img class="user-icon" src="{{ user.image.url }}">
+                    {% endif %}
+                    </a>
+                </li>
+            {% else %}
+                <li class="pc_only_display header_menu_item header_menu_item_sp with_login_singnup_button to_top"><a class="margin_top_a" href="{% url 'neighbor_app:top' %}">商品一覧</a></li>
+
+                <li class="header_menu_item header_menu_item_sp"><a class="margin_top_a" href="{% url 'account_login' %}">ログイン</a></li>
+                <li class="header_menu_item header_menu_item_sp" id="logout_right_padding"><a class="margin_top_a" href="{% url 'account_signup' %}">新規登録</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+<div class="message">
+    {% if messages %}
+    {% for message in messages %}
+    <p><i class="fas fa-exclamation-circle"></i>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+</div>
+
+<div class="main_content">
+    {% block content %}
+
+    {% endblock %}
+
+    <a class="to_sell_form_area_a" href="{% url 'neighbor_app:sell_form' %}">
+        <div class="to_sell_form_area">
+            <div class="to_sell_form_area_message">出品</div>
+            <div class="camera_icon"><i class="fas fa-camera"></i></div>
+        </div>
+    </a>
+
+
+</div>
+
+<footer class="site_footer">
+    <nav id="footer_info">
+        <ul id="footer_menu_content">
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:top' %}">商品一覧</a></li>
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:terms_of_service' %}">利用規約</a></li>
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:privacy_policy' %}">プライバシーポリシー</a></li>
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:sctl' %}">特定商取引法に基づく通知</a></li>
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:inquiry' %}">お問い合わせ</a></li>
+            <li class="footer_menu_item"><a href="{% url 'neighbor_app:about_service' %}">borsについて</a></li>
+        </ul>
+    </nav>
+    <div class="copy_right">copy right© bors Web All Rights Reserved.</div>
+</footer>
+</main>
+
+<script type="text/javascript" src="{% static 'js/WhHfd1YHwYgPYOU.js' %}"></script>
+
+
+</body>
+
+
+
+</html>

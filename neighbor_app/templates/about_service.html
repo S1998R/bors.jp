@@ -1,0 +1,363 @@
+{% extends 'accounts_base.html' %}
+
+{% load static %}
+
+{% block title %}本サービスについて | bors{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/HS5lUdvZJsmXBMl.css' %}">{% endblock %}
+{% block head %}
+    <meta name="description" content="大学内に特化したフリマプラットフォームです。大学で使う教科書や道具が効率よく見つかるかも！？・お手軽出品・大学に来たついでに売り買いできて配送も必要ナシ。">
+{% endblock %}
+
+{% block content %}
+<div class="all_content_wrap">
+    <div class="message_wrap bg_slide">
+
+        <div class="messages_div">
+            <div class="page_title_message">
+                bors は、大学内で不用品を売買できるフリマプラットフォームです。
+            </div>
+            <div class="page_title_message">
+                大学内のシェアリングエコノミーを活性化し、より豊かな学生生活を提供します。
+            </div>
+            <a href="{% url 'account_signup' %}">
+                <div class="register_button">
+                     borsを始める
+                </div>
+            </a>
+
+            <div>
+            <a href="#buy_flow">
+                <div class="register_button buy_flow_button">
+                     買い方
+                </div>
+            </a>
+
+            <a href="#sell_flow">
+                <div class="register_button sell_flow_button">
+                     売り方
+                </div>
+            </a>
+            </div>
+        </div>
+    </div>
+
+<div class="function_explain_wrap for_pc">
+<div class="function_explain_title content_title">bors の特徴</div>
+    <div class="function_wrap">
+        <div class="function">完全無料</div>
+        <div class="function_image"><img src="{% static '3fEnt3X3Aa2eydK.svg' %}" alt="undraw_exams_g4ow"></div>
+        <div class="function_content">仲介手数料や引き出し手数料等の利用料は一切かからず、無料でご利用いただけます。<br><span class="red">※商品購入自体には商品代金が必要です。</span></div>
+    </div>
+
+    <div class="function_wrap">
+        <div class="function">学部、学科で検索可能</div>
+        <div class="function_content">大学で使う教科書等を学部・学科で検索でき、非常に効率的に商品を探すことができます。</div>
+        <div class="function_image"><img src="{% static 'XqgRC56o5jwxstv.svg' %}" alt="undraw_exams_g4ow"></div>
+    </div>
+
+    <div class="function_wrap">
+        <div class="function">大学内で手軽に取引</div>
+        <div class="function_image"><img src="{% static 'sKyr3W82O3rkFHu.png' %}" alt="undraw_Business_deal_re_up4u"></div>
+        <div class="function_content">取引相手が同じ大学に通う学生であれば、大学に来たついでにに取引ができ、配送の手間がかかりません。またクレジットカードや銀行口座の登録も不要です。<br><span class="red">※本サービスでは配送による商品の取引は想定しておらず、配送に必要な機能は搭載しておりません。</span></div>
+    </div>
+
+    <div class="function_wrap">
+        <div class="function">大学のメールアドレス登録で安心</div>
+        <div class="function_content">本サービスでは、大学のメールアドレスでユーザー登録を行うため、取引相手がその大学の学生であることが保証され、安心して取引を行うことができます。</div>
+        <div class="function_image"><img src="{% static 'hrVAxonBGM9e217.png' %}" alt="undraw_Security_on_re_e491"></div>
+    </div>
+
+    <div class="function_wrap">
+        <div class="function">手軽に出品</div>
+        <div class="function_image"><img src="{% static 'YQ1fAe6C2ohgjIZ.png' %}" alt="undraw_Cloud_sync_re_02p1"></div>
+        <div class="function_content">非常にシンプルな操作で出品できるようになっています。</div>
+    </div>
+
+</div>
+
+
+<div class="function_explain_wrap for_smart_phone">
+<div class="function_explain_title content_title">borsの特徴</div>
+    <div class="function_wrap">
+        <div class="function">完全無料</div>
+        <div class="function_content">仲介手数料や引き出し手数料等の利用料は一切かからず、無料でご利用いただけます。<br><span class="red">※商品購入自体には商品代金が必要です。</span></div>
+        <div class="function_image"><img src="{% static '3fEnt3X3Aa2eydK.svg' %}" alt="undraw_exams_g4ow"></div>
+    </div>
+
+    <div class="function_wrap">
+        <div class="function">学部、学科で検索可能</div>
+        <div class="function_content">教科書等を学部・学科で検索でき、非常に効率的に商品を探すことができます。</div>
+        <div class="function_image"><img src="{% static 'XqgRC56o5jwxstv.svg' %}" alt="undraw_exams_g4ow"></div>
+    </div>
+
+    <div class="function_wrap">
+        <div class="function">大学内で手軽に取引</div>
+        <div class="function_content">取引相手が同じ大学に通う学生であれば、大学に来たついでに取引ができ、配送の手間がかかりません。またクレジットカードや銀行口座の登録も不要です。<br><span class="red">※本サービスでは配送による商品の取引は想定しておらず、配送に必要な機能は搭載しておりません。</span></div>
+        <div class="function_image"><img src="{% static 'sKyr3W82O3rkFHu.png' %}" alt="undraw_Business_deal_re_up4u"></div>
+    </div>
+
+    <div class="function_wrap">
+        <div class="function">大学のメールアドレス登録で安心</div>
+        <div class="function_content">本サービスでは、大学のメールアドレスでユーザー登録を行うため、取引相手がその大学の学生であることが保証され、安心して取引を行うことができます。</div>
+        <div class="function_image"><img src="{% static 'hrVAxonBGM9e217.png' %}" alt="undraw_Security_on_re_e491"></div>
+    </div>
+
+    <div class="function_wrap">
+        <div class="function">手軽に出品</div>
+        <div class="function_content">非常にシンプルな操作で出品できるようになっています。</div>
+        <div class="function_image"><img src="{% static 'YQ1fAe6C2ohgjIZ.png' %}" alt="undraw_Cloud_sync_re_02p1"></div>
+    </div>
+
+
+</div>
+
+
+
+
+
+    <div class="sell_flow_contents" id="sell_flow">
+        <div class="post_explain_title content_title">出品時の流れ</div>
+
+       <div class="fee_explain">
+                <div class="fee_explain_detail">
+                    ・完全無料
+                </div>
+                <div class="fee_explain_detail">
+                    ・銀行口座などの登録不要
+                </div>
+        </div>
+
+        <div class="flow_wrap">
+            <div class="step_title">
+                step.1 出品
+            </div>
+            <div class="first_step">
+                <div class="step_wrap">
+                    <div class="step_explanation">
+                        商品情報を入力
+                    </div>
+                    <div class="step_image  input_image">
+                        <img src="{% static '8a9gVXS9656fRvc.png' %}" alt="商品情報を入力">
+                    </div>
+                </div>
+
+                <div class="arrow_and_step_wrap">
+                    <div class="arrow">
+                        <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                    </div>
+
+                    <div class="step_wrap">
+                        <div class="step_explanation">
+                            アップロード
+                        </div>
+                        <div class="step_image upload_image">
+                            <img src="{% static 'ybNY76bT92HmFiV.png' %}" alt="アップロード">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step_title">
+                step.2 商品の受け渡し
+            </div>
+
+            <div class="second_step">
+                <div class="step_explanations">
+                    <div class="step_explanation">
+                        購入者が「購入する」<br>をクリック
+                    </div>
+                    <div class="step_explanation">
+                            トークルーム作成<br><span class="talkroom_do">取引場所、日時を決定</span>
+                    </div>
+                    <div class="step_explanation">
+                            商品を売却
+                    </div>
+                </div>
+
+                <div class="step_images">
+                    <div class="step_image">
+                        <img src="{% static 'ThRiaLQKL5yyXoR.png' %}" alt="購入するをクリック">
+                    </div>
+
+                    <div class="arrow_1">
+                        <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                    </div>
+
+                    <div class="step_image">
+                        <img src="{% static '3R5qo89L2kNPAxc.png' %}" alt="トークルーム作成">
+                    </div>
+
+                    <div class="arrow_2">
+                        <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                    </div>
+
+                    <div class="step_image">
+                        <img src="{% static 'pv5FumMPuFTsi5e.png' %}" alt="商品の受け渡し">
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="second_step_for_smartphone">
+
+                <div class="step_wrap">
+                    <div class="step_explanation">
+                        購入者が「購入する」<br>をクリック
+                    </div>
+                    <div class="step_image">
+                        <img src="{% static 'ThRiaLQKL5yyXoR.png' %}" alt="購入するをクリック">
+                    </div>
+                </div>
+
+                <div class="arrow_and_step_wrap">
+
+                    <div class="arrow">
+                        <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                    </div>
+
+                    <div class="step_wrap">
+                        <div class="step_explanation">
+                            トークルーム作成<br><span class="talkroom_do">取引場所、日時を決定</span>
+                        </div>
+                        <div class="step_image">
+                            <img src="{% static '3R5qo89L2kNPAxc.png' %}" alt="トークルーム作成">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arrow_and_step_wrap">
+                    <div class="arrow">
+                        <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                    </div>
+
+                    <div class="step_wrap">
+                        <div class="step_explanation">
+                            商品を売却
+                        </div>
+                        <div class="step_image">
+                            <img src="{% static 'pv5FumMPuFTsi5e.png' %}" alt="商品の受け渡し">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <div class="buy_flow_contents" id="buy_flow">
+        <div class="post_explain_title content_title">購入時の流れ</div>
+
+        <div class="fee_explain" id="margin_top">
+            <div class="fee_explain_detail">
+                ・完全無料
+            </div>
+            <div class="fee_explain_detail">
+                ・カード登録不要
+            </div>
+            <div class="fee_explain_detail">
+                ・商品はオフラインで購入
+            </div>
+        </div>
+
+            <div class="flow_wrap">
+
+                <div class="second_step">
+                    <div class="step_explanations">
+                        <div class="step_explanation">
+                            「購入する」をクリック
+                        </div>
+                        <div class="step_explanation">
+                                トークルーム作成<br><span class="talkroom_do">取引場所、日時を決定</span>
+                        </div>
+                        <div class="step_explanation">
+                                商品を購入
+                        </div>
+                    </div>
+
+                    <div class="step_images">
+                        <div class="step_image">
+                            <img src="{% static 'ThRiaLQKL5yyXoR.png' %}" alt="購入するをクリック">
+                        </div>
+
+                        <div class="arrow_1">
+                            <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                        </div>
+
+                        <div class="step_image">
+                            <img src="{% static '3R5qo89L2kNPAxc.png' %}" alt="トークルーム作成">
+                        </div>
+
+                        <div class="arrow_2">
+                            <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                        </div>
+
+                        <div class="step_image">
+                            <img src="{% static 'pv5FumMPuFTsi5e.png' %}" alt="商品の受け渡し">
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="second_step_for_smartphone">
+
+                    <div class="step_wrap">
+                        <div class="step_explanation">
+                            「購入する」をクリック
+                        </div>
+                        <div class="step_image">
+                            <img src="{% static 'ThRiaLQKL5yyXoR.png' %}" alt="購入するをクリック">
+                        </div>
+                    </div>
+
+                    <div class="arrow_and_step_wrap">
+
+                        <div class="arrow">
+                            <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                        </div>
+
+                        <div class="step_wrap">
+                            <div class="step_explanation">
+                                トークルーム作成<br><span class="talkroom_do">取引場所、日時を決定</span>
+                            </div>
+                            <div class="step_image">
+                                <img src="{% static '3R5qo89L2kNPAxc.png' %}" alt="トークルーム作成">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="arrow_and_step_wrap">
+                        <div class="arrow">
+                            <img src="{% static 'YY7yMfhw4hOGcIq.png' %}" alt="矢印">
+                        </div>
+
+                        <div class="step_wrap">
+                            <div class="step_explanation">
+                                商品を購入
+                            </div>
+                            <div class="step_image">
+                                <img src="{% static 'pv5FumMPuFTsi5e.png' %}" alt="商品の受け渡し">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+</div>
+
+
+{% endblock %}

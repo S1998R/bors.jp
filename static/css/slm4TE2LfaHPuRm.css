@@ -1,0 +1,23 @@
+.field {
+    text-align: center;
+    width: 90%;
+    padding-top: 20px;
+    margin: auto;
+}
+
+div.field > select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: solid 1px;
+    background: white;
+    width: 100px;
+}
+
+.important_message {
+    font-size: 13px;
+}
+

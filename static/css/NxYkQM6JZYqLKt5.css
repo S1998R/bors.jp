@@ -1,0 +1,57 @@
+.announce_title {
+    border-bottom: solid 0.5px #808080;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.information_a {
+    text-decoration: none;
+    color: #000;
+}
+
+.announce_title:hover {
+    background: #EEEEEE;
+}
+
+/* ここからページネーション */
+.nav_div {
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+#nav {
+  list-style: none;
+  overflow: hidden;
+  padding-inline-start: 0px;
+}
+
+#nav li {
+    width: 50px;
+    text-align: center;
+    background-color: #F4A460;
+    float: left;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+
+#nav li:hover {
+    background-color:#d2691e;
+}
+
+
+#nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.now_page {
+    background-color:#d2691e !important;
+    color: #fff;
+    font-weight: bold;
+}
+
+/*  ここまでページネーション */

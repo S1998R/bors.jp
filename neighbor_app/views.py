@@ -43,7 +43,7 @@ class TopListView(generic.TemplateView):
 
     def get(self, request, *args, **kwargs):
 
-        self.request.session.set_expiry(60 * 60 * 24 * 14)  # sessionを2週間に設定(なぜかログインセッションが効かなくなったのでここでセッションを作成)
+        self.request.session.set_expiry(60 * 60 * 24 * 14)  # sessionを2週間に設定
 
         if self.request.user.id:  # ログインしている場合
 
